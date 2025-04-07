@@ -5,7 +5,9 @@ apis:
   - aid: financial-modeling-prep:financial-modeling-prep
     name: Financial Modeling Prep
     tags:
-      - API
+      - Financial
+      - Data
+      - Historical
     humanURL: ' https://site.financialmodelingprep.com/'
     properties:
       - url: ' https://site.financialmodelingprep.com/'
