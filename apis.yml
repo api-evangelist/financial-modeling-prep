@@ -11,8 +11,8 @@ created: '2025-02-24'
 modified: '2026-03-16'
 position: Consumer
 tags:
-  - Financial
   - Data
+  - Financial
   - Historical
 url: >-
   https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml
@@ -21,8 +21,8 @@ apis:
   - aid: financial-modeling-prep:financial-modeling-prep
     name: Financial Modeling Prep
     tags:
-      - Financial
       - Data
+      - Financial
       - Historical
     humanURL: https://site.financialmodelingprep.com/
     baseURL: https://financialmodelingprep.com/api/v3
