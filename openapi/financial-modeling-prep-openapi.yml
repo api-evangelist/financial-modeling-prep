@@ -1,0 +1,359 @@
+openapi: 3.1.0
+info:
+  title: Financial Modeling Prep API
+  description: >-
+    Financial Modeling Prep (FMP) provides financial market data including
+    real-time and historical stock quotes, company fundamentals, financial
+    statements (income, balance sheet, cash flow), insider transactions,
+    earnings, ratios, and economic data. This OpenAPI spec covers a
+    representative subset of the public REST API.
+  version: 3.0.0
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com/
+servers:
+  - url: https://financialmodelingprep.com/api/v3
+    description: Financial Modeling Prep v3 API
+security:
+  - apiKeyQuery: []
+paths:
+  /quote/{symbol}:
+    get:
+      operationId: getQuote
+      summary: Get real-time stock quote
+      description: Returns the latest price and market data for a given ticker symbol.
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+      responses:
+        '200':
+          description: Quote data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+  /historical-price-full/{symbol}:
+    get:
+      operationId: getHistoricalPrice
+      summary: Get historical end-of-day prices
+      description: Returns historical daily OHLCV data for a ticker symbol.
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+        - name: from
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Historical price series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HistoricalPriceResponse'
+  /income-statement/{symbol}:
+    get:
+      operationId: getIncomeStatement
+      summary: Get company income statement
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+        - $ref: '#/components/parameters/Period'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Income statement records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IncomeStatement'
+  /balance-sheet-statement/{symbol}:
+    get:
+      operationId: getBalanceSheet
+      summary: Get company balance sheet
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+        - $ref: '#/components/parameters/Period'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Balance sheet records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /cash-flow-statement/{symbol}:
+    get:
+      operationId: getCashFlowStatement
+      summary: Get company cash flow statement
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+        - $ref: '#/components/parameters/Period'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Cash flow statement records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /profile/{symbol}:
+    get:
+      operationId: getCompanyProfile
+      summary: Get company profile
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+      responses:
+        '200':
+          description: Company profile
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompanyProfile'
+  /search:
+    get:
+      operationId: searchSymbols
+      summary: Search for ticker symbols
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: exchange
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    symbol:
+                      type: string
+                    name:
+                      type: string
+                    currency:
+                      type: string
+                    stockExchange:
+                      type: string
+                    exchangeShortName:
+                      type: string
+  /stock/list:
+    get:
+      operationId: listStocks
+      summary: List all available stock symbols
+      responses:
+        '200':
+          description: Stock list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /insider-trading:
+    get:
+      operationId: getInsiderTrading
+      summary: Get insider transactions
+      parameters:
+        - name: symbol
+          in: query
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Insider transactions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /ratios/{symbol}:
+    get:
+      operationId: getFinancialRatios
+      summary: Get company financial ratios
+      parameters:
+        - $ref: '#/components/parameters/Symbol'
+        - $ref: '#/components/parameters/Period'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Financial ratios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+  parameters:
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
+    Period:
+      name: period
+      in: query
+      description: Reporting period
+      schema:
+        type: string
+        enum:
+          - annual
+          - quarter
+        default: annual
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 40
+  schemas:
+    Quote:
+      type: object
+      properties:
+        symbol:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+        changesPercentage:
+          type: number
+        change:
+          type: number
+        dayLow:
+          type: number
+        dayHigh:
+          type: number
+        yearHigh:
+          type: number
+        yearLow:
+          type: number
+        marketCap:
+          type: number
+        priceAvg50:
+          type: number
+        priceAvg200:
+          type: number
+        volume:
+          type: integer
+        avgVolume:
+          type: integer
+        exchange:
+          type: string
+        open:
+          type: number
+        previousClose:
+          type: number
+        eps:
+          type: number
+        pe:
+          type: number
+        timestamp:
+          type: integer
+    HistoricalPrice:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        open:
+          type: number
+        high:
+          type: number
+        low:
+          type: number
+        close:
+          type: number
+        adjClose:
+          type: number
+        volume:
+          type: integer
+    HistoricalPriceResponse:
+      type: object
+      properties:
+        symbol:
+          type: string
+        historical:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoricalPrice'
+    IncomeStatement:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        symbol:
+          type: string
+        period:
+          type: string
+        revenue:
+          type: number
+        costOfRevenue:
+          type: number
+        grossProfit:
+          type: number
+        operatingIncome:
+          type: number
+        netIncome:
+          type: number
+        eps:
+          type: number
+    CompanyProfile:
+      type: object
+      properties:
+        symbol:
+          type: string
+        companyName:
+          type: string
+        industry:
+          type: string
+        sector:
+          type: string
+        country:
+          type: string
+        ceo:
+          type: string
+        website:
+          type: string
+        description:
+          type: string
+        exchange:
+          type: string
+        currency:
+          type: string
