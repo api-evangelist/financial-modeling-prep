@@ -2,7 +2,7 @@
 
 Financial Modeling Prep (FMP) provides financial market data via REST APIs, including real-time and historical stock quotes, company fundamentals, income statements, balance sheets, cash flow statements, financial ratios, insider transactions, earnings, dividends, ETF and mutual fund data, and economic indicators - with up to 30 years of historical coverage.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml)
 
 ## Scope
 
@@ -12,31 +12,55 @@ Financial Modeling Prep (FMP) provides financial market data via REST APIs, incl
 
 ## Tags
 
-- Financial Data, Market Data, Stocks, Quotes, Fundamentals, Financial Statements, Historical
+- Financial Data
+- Market Data
+- Stocks
+- Quotes
+- Fundamentals
+- Financial Statements
+- Historical
+
+## Timestamps
+
+- **Created:** 2025-02-24
+- **Modified:** 2026-05-19
 
 ## APIs
 
 ### Financial Modeling Prep API
 
-REST API offering real-time and historical stock quotes, financial statements, company profiles, ratios, insider trading, ETFs, and economic data. Authentication via API key passed as the `apikey` query parameter.
+REST API offering real-time and historical stock quotes, financial statements, company profiles, ratios, insider trading, ETFs, and economic data. Authentication via API key passed as the apikey query parameter.
 
-- **Human URL:** https://site.financialmodelingprep.com/
-- **Base URL:** https://financialmodelingprep.com/api/v3
+- **Human URL:** [https://site.financialmodelingprep.com/](https://site.financialmodelingprep.com/)
+- **Base URL:** `https://financialmodelingprep.com/api/v3`
+
+#### Tags
+
+- Financial Data
+- Market Data
+- Stocks
+- Fundamentals
 
 #### Properties
 
 - [Documentation](https://site.financialmodelingprep.com/developer/docs)
 - [Sign Up](https://site.financialmodelingprep.com/register)
 - [Pricing](https://site.financialmodelingprep.com/developer/docs/pricing)
-- [OpenAPI](openapi/financial-modeling-prep-openapi.yml)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/openapi/financial-modeling-prep-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/financial-modeling-prep.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/financial-modeling-prep.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-## Timestamps
+## Common Properties
 
-- **Created:** 2025-02-24
-- **Modified:** 2026-04-28
+- [GitHub Organization](https://github.com/FinancialModelingPrep)
+- [LinkedIn](https://www.linkedin.com/company/financial-modeling-prep)
+- [Website](https://site.financialmodelingprep.com/)
+- [Documentation](https://site.financialmodelingprep.com/developer/docs)
+- [Sign Up](https://site.financialmodelingprep.com/register)
+- [Pricing](https://site.financialmodelingprep.com/developer/docs/pricing)
+- [Blog](https://site.financialmodelingprep.com/market-news)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com
