@@ -1,0 +1,1039 @@
+{
+  "item": [
+    {
+      "id": "438812eb-d8af-412a-a243-e375b37ee3c7",
+      "name": "Get real-time stock quote",
+      "request": {
+        "name": "Get real-time stock quote",
+        "description": {
+          "content": "Returns the latest price and market data for a given ticker symbol.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "quote",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "65323078-05e7-496c-98b6-2c4616132fbe",
+          "name": "Quote data",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "quote",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"symbol\": \"string\",\n    \"name\": \"string\",\n    \"price\": 8516.281916341291,\n    \"changesPercentage\": 6679.640787258445,\n    \"change\": 9961.29971754445,\n    \"dayLow\": 3154.666532532808,\n    \"dayHigh\": 64.80104689138511,\n    \"yearHigh\": 9089.386115752202,\n    \"yearLow\": 6723.639824614221,\n    \"marketCap\": 6012.04469667257,\n    \"priceAvg50\": 907.3522031584247,\n    \"priceAvg200\": 5409.857329796827,\n    \"volume\": 8976,\n    \"avgVolume\": 4912,\n    \"exchange\": \"string\",\n    \"open\": 9588.107798403493,\n    \"previousClose\": 8373.530247984909,\n    \"eps\": 1608.7806754699618,\n    \"pe\": 2031.496599967103,\n    \"timestamp\": 6024\n  },\n  {\n    \"symbol\": \"string\",\n    \"name\": \"string\",\n    \"price\": 8059.923706553007,\n    \"changesPercentage\": 2976.6835967117077,\n    \"change\": 3445.9172953610296,\n    \"dayLow\": 6254.28365227797,\n    \"dayHigh\": 691.8726659529829,\n    \"yearHigh\": 4644.685681908336,\n    \"yearLow\": 6308.011906072563,\n    \"marketCap\": 2180.61550359969,\n    \"priceAvg50\": 7293.475496992509,\n    \"priceAvg200\": 9402.383443414543,\n    \"volume\": 8209,\n    \"avgVolume\": 1470,\n    \"exchange\": \"string\",\n    \"open\": 1258.2474900701045,\n    \"previousClose\": 8228.747926390324,\n    \"eps\": 8666.210716852062,\n    \"pe\": 2332.8352615348126,\n    \"timestamp\": 9784\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "409fc7c0-f86f-4403-9878-5de6bc416be5",
+      "name": "Get historical end-of-day prices",
+      "request": {
+        "name": "Get historical end-of-day prices",
+        "description": {
+          "content": "Returns historical daily OHLCV data for a ticker symbol.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "historical-price-full",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "from",
+              "value": "<date>"
+            },
+            {
+              "disabled": false,
+              "key": "to",
+              "value": "<date>"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f46a7270-d1e7-4167-ab9e-acfd01a4fad1",
+          "name": "Historical price series",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "historical-price-full",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": "<date>"
+                },
+                {
+                  "key": "to",
+                  "value": "<date>"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"symbol\": \"string\",\n  \"historical\": [\n    {\n      \"date\": \"2024-11-10\",\n      \"open\": 975.2692415999564,\n      \"high\": 7183.555993047565,\n      \"low\": 9283.093676737619,\n      \"close\": 4105.486580179453,\n      \"adjClose\": 8347.16918220665,\n      \"volume\": 2882\n    },\n    {\n      \"date\": \"2023-06-17\",\n      \"open\": 2995.4679685296805,\n      \"high\": 5497.353410947326,\n      \"low\": 8725.281244344409,\n      \"close\": 6038.204070192409,\n      \"adjClose\": 1010.659987095559,\n      \"volume\": 1513\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9df4fbf6-de2d-434d-ac62-b237a5069ee1",
+      "name": "Get company income statement",
+      "request": {
+        "name": "Get company income statement",
+        "description": {},
+        "url": {
+          "path": [
+            "income-statement",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "period",
+              "value": "annual",
+              "description": "Reporting period"
+            },
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "40"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d681a383-4377-47ac-9e48-1f92064812da",
+          "name": "Income statement records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "income-statement",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "annual"
+                },
+                {
+                  "key": "limit",
+                  "value": "40"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"date\": \"2021-11-28\",\n    \"symbol\": \"string\",\n    \"period\": \"string\",\n    \"revenue\": 4090.6137807278033,\n    \"costOfRevenue\": 5349.124424710158,\n    \"grossProfit\": 1043.3065153698794,\n    \"operatingIncome\": 7021.174629903646,\n    \"netIncome\": 7116.636869660363,\n    \"eps\": 3759.1404342514347\n  },\n  {\n    \"date\": \"1960-10-11\",\n    \"symbol\": \"string\",\n    \"period\": \"string\",\n    \"revenue\": 2156.705034446836,\n    \"costOfRevenue\": 6617.472670789508,\n    \"grossProfit\": 5626.349709758065,\n    \"operatingIncome\": 468.4983888356653,\n    \"netIncome\": 9796.043630817212,\n    \"eps\": 4969.083060381825\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5a55c1e1-57f6-40a1-89f2-e6eff05380a1",
+      "name": "Get company balance sheet",
+      "request": {
+        "name": "Get company balance sheet",
+        "description": {},
+        "url": {
+          "path": [
+            "balance-sheet-statement",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "period",
+              "value": "annual",
+              "description": "Reporting period"
+            },
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "40"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "69d6a60b-78ea-450a-a0d9-9b3b19afaa13",
+          "name": "Balance sheet records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "balance-sheet-statement",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "annual"
+                },
+                {
+                  "key": "limit",
+                  "value": "40"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "45d60492-097e-4c2b-a9dd-38e4a5356d2a",
+      "name": "Get company cash flow statement",
+      "request": {
+        "name": "Get company cash flow statement",
+        "description": {},
+        "url": {
+          "path": [
+            "cash-flow-statement",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "period",
+              "value": "annual",
+              "description": "Reporting period"
+            },
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "40"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "74512823-5edb-42e8-aa07-5f6c68522b9a",
+          "name": "Cash flow statement records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "cash-flow-statement",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "annual"
+                },
+                {
+                  "key": "limit",
+                  "value": "40"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f1c0276d-53e4-4491-857c-5a7998ae20e7",
+      "name": "Get company profile",
+      "request": {
+        "name": "Get company profile",
+        "description": {},
+        "url": {
+          "path": [
+            "profile",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "37e6722c-3c22-4e5c-bf95-6946b6ec6b82",
+          "name": "Company profile",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "profile",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"symbol\": \"string\",\n    \"companyName\": \"string\",\n    \"industry\": \"string\",\n    \"sector\": \"string\",\n    \"country\": \"string\",\n    \"ceo\": \"string\",\n    \"website\": \"string\",\n    \"description\": \"string\",\n    \"exchange\": \"string\",\n    \"currency\": \"string\"\n  },\n  {\n    \"symbol\": \"string\",\n    \"companyName\": \"string\",\n    \"industry\": \"string\",\n    \"sector\": \"string\",\n    \"country\": \"string\",\n    \"ceo\": \"string\",\n    \"website\": \"string\",\n    \"description\": \"string\",\n    \"exchange\": \"string\",\n    \"currency\": \"string\"\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3c996956-b127-4979-9c8c-2ac73cf4600c",
+      "name": "Search for ticker symbols",
+      "request": {
+        "name": "Search for ticker symbols",
+        "description": {},
+        "url": {
+          "path": [
+            "search"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "query",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "disabled": false,
+              "key": "exchange",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "17108b56-cfbf-4e91-9967-ab651afcebbf",
+          "name": "Search results",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "exchange",
+                  "value": "<string>"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"symbol\": \"string\",\n    \"name\": \"string\",\n    \"currency\": \"string\",\n    \"stockExchange\": \"string\",\n    \"exchangeShortName\": \"string\"\n  },\n  {\n    \"symbol\": \"string\",\n    \"name\": \"string\",\n    \"currency\": \"string\",\n    \"stockExchange\": \"string\",\n    \"exchangeShortName\": \"string\"\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ed37205e-995b-429a-9262-3b460fcfbafd",
+      "name": "List all available stock symbols",
+      "request": {
+        "name": "List all available stock symbols",
+        "description": {},
+        "url": {
+          "path": [
+            "stock",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d23452db-207a-44d7-8e3b-d9bcdbb91a69",
+          "name": "Stock list",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "stock",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8dadb660-69ad-4e3b-a271-57e92c9d5f93",
+      "name": "Get insider transactions",
+      "request": {
+        "name": "Get insider transactions",
+        "description": {},
+        "url": {
+          "path": [
+            "insider-trading"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "symbol",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "40"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6e3f7d3a-0ee0-4c16-be8d-dd248113e915",
+          "name": "Insider transactions",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "insider-trading"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "symbol",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "40"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "448890da-aec6-49bb-b531-156d2cbba84d",
+      "name": "Get company financial ratios",
+      "request": {
+        "name": "Get company financial ratios",
+        "description": {},
+        "url": {
+          "path": [
+            "ratios",
+            ":symbol"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "period",
+              "value": "annual",
+              "description": "Reporting period"
+            },
+            {
+              "disabled": false,
+              "key": "limit",
+              "value": "40"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "cbdaf5c2-91a2-46ca-8353-c652afaca23b",
+          "name": "Financial ratios",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ratios",
+                ":symbol"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "annual"
+                },
+                {
+                  "key": "limit",
+                  "value": "40"
+                },
+                {
+                  "key": "apikey",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Ticker symbol (e.g., AAPL, MSFT)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/api/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "45fb304b-4014-4171-b837-5cd2de6cde77",
+    "name": "Financial Modeling Prep API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) provides financial market data including real-time and historical stock quotes, company fundamentals, financial statements (income, balance sheet, cash flow), insider transactions, earnings, ratios, and economic data. This OpenAPI spec covers a representative subset of the public REST API.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

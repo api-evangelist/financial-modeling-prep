@@ -1,0 +1,267 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get real-time stock quote",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/quote/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          }
+        ]
+      },
+      "docs": "Returns the latest price and market data for a given ticker symbol."
+    },
+    {
+      "info": {
+        "name": "Get historical end-of-day prices",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/historical-price-full/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          },
+          {
+            "name": "from",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "to",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns historical daily OHLCV data for a ticker symbol."
+    },
+    {
+      "info": {
+        "name": "Get company income statement",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/income-statement/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          },
+          {
+            "name": "period",
+            "value": "",
+            "type": "query",
+            "description": "Reporting period"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get company income statement"
+    },
+    {
+      "info": {
+        "name": "Get company balance sheet",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/balance-sheet-statement/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          },
+          {
+            "name": "period",
+            "value": "",
+            "type": "query",
+            "description": "Reporting period"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get company balance sheet"
+    },
+    {
+      "info": {
+        "name": "Get company cash flow statement",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/cash-flow-statement/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          },
+          {
+            "name": "period",
+            "value": "",
+            "type": "query",
+            "description": "Reporting period"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get company cash flow statement"
+    },
+    {
+      "info": {
+        "name": "Get company profile",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/profile/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          }
+        ]
+      },
+      "docs": "Get company profile"
+    },
+    {
+      "info": {
+        "name": "Search for ticker symbols",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/search",
+        "params": [
+          {
+            "name": "query",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "exchange",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Search for ticker symbols"
+    },
+    {
+      "info": {
+        "name": "List all available stock symbols",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/stock/list"
+      },
+      "docs": "List all available stock symbols"
+    },
+    {
+      "info": {
+        "name": "Get insider transactions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/insider-trading",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get insider transactions"
+    },
+    {
+      "info": {
+        "name": "Get company financial ratios",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://financialmodelingprep.com/api/v3/ratios/:symbol",
+        "params": [
+          {
+            "name": "symbol",
+            "value": "",
+            "type": "path",
+            "description": "Ticker symbol (e.g., AAPL, MSFT)"
+          },
+          {
+            "name": "period",
+            "value": "",
+            "type": "query",
+            "description": "Reporting period"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get company financial ratios"
+    }
+  ],
+  "bundled": true
+}
