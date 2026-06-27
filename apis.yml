@@ -37,7 +37,7 @@ apis:
     properties:
       - type: Documentation
         url: https://site.financialmodelingprep.com/developer/docs
-      - type: SignUp
+      - type: Signup
         url: https://site.financialmodelingprep.com/register
       - type: Pricing
         url: https://site.financialmodelingprep.com/developer/docs/pricing
@@ -53,7 +53,7 @@ common:
     url: https://site.financialmodelingprep.com/
   - type: Documentation
     url: https://site.financialmodelingprep.com/developer/docs
-  - type: SignUp
+  - type: Signup
     url: https://site.financialmodelingprep.com/register
   - type: Pricing
     url: https://site.financialmodelingprep.com/developer/docs/pricing

@@ -3,13 +3,10 @@
   "feeds": [
     {
       "source": "https://site.financialmodelingprep.com/market-news",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://site.financialmodelingprep.com/developer/docs/pricing",
-      "error": "HTTPError"
+      "saved": 0,
+      "error": "403 Forbidden (HTML scrape)"
     }
   ],
-  "fetched": "2026-06-14T20:42:17Z",
+  "fetched": "2026-06-27T12:41:03Z",
   "post_count": 0
 }
