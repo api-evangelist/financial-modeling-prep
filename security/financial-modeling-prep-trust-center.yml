@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://site.financialmodelingprep.com/trust
+url: https://site.financialmodelingprep.com/trust
+certifications:
+- SOC 2
+evidence:
+- source: https://site.financialmodelingprep.com/trust
+  keywords:
+  - soc 2
+  - soc2

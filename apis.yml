@@ -45,6 +45,12 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/openapi/financial-modeling-prep-openapi.yml
 common:
+  - type: TrustCenter
+    url: security/financial-modeling-prep-trust-center.yml
+  - type: DomainSecurity
+    url: security/financial-modeling-prep-domain-security.yml
+  - type: Authentication
+    url: authentication/financial-modeling-prep-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/FinancialModelingPrep
   - type: LinkedIn
