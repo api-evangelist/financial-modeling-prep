@@ -2,11 +2,10 @@
   "repo": "financial-modeling-prep",
   "feeds": [
     {
-      "source": "https://site.financialmodelingprep.com/market-news",
-      "saved": 0,
-      "error": "403 Forbidden (HTML scrape)"
+      "source": "https://site.financialmodelingprep.com/developer/docs/pricing",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-27T12:41:03Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 0
 }
