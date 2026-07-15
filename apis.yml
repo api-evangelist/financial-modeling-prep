@@ -45,6 +45,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/openapi/financial-modeling-prep-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/financial-modeling-prep-agentic-access.yml
   - type: TrustCenter
     url: security/financial-modeling-prep-trust-center.yml
   - type: DomainSecurity
