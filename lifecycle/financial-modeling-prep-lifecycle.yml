@@ -1,0 +1,18 @@
+generated: '2026-07-22'
+method: searched
+source: https://site.financialmodelingprep.com/api-docs.md
+versioning:
+  scheme: stable-channel
+  current: stable
+  base_url: https://financialmodelingprep.com/stable
+  docs: https://site.financialmodelingprep.com/developer/docs
+  notes: FMP replaced versioned paths (/api/v3, /api/v4) with a single /stable channel; changes are announced on
+    the dated changelog.
+deprecation:
+  policy: Legacy endpoints (https://financialmodelingprep.com/v3/ and /v4/) have been discontinued and are no longer
+    supported; consumers must use https://financialmodelingprep.com/stable/.
+  source: https://site.financialmodelingprep.com/api-docs.md
+  sunset_header: false
+status_page: https://status.financialmodelingprep.com/
+changelog: https://site.financialmodelingprep.com/developer/docs/changelog
+deprecated_operations: []

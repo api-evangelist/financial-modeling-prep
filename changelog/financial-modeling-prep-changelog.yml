@@ -1,0 +1,26 @@
+generated: '2026-07-22'
+method: searched
+source: https://site.financialmodelingprep.com/developer/docs/changelog
+scheme: dated entries against the stable channel
+current_version: stable
+changelog_api: https://financialmodelingprep.com/api/v3/changelog
+entries:
+- date: '2026-06-05'
+  breaking: false
+  highlights:
+  - Added senateID field to all U.S. Senate/House trade endpoints for entity matching across datasets
+  - Added pagination parameter to the Stock Screener endpoint
+  - New includeReportTimes field on the Earnings Calendar (period of report, confirmed/estimated, estimated time)
+- date: '2026-05-21'
+  breaking: false
+  highlights:
+  - 'Plan Add-ons: on-demand bandwidth and API-call packages manageable from the customer dashboard'
+- date: '2026-05-11'
+  breaking: false
+  highlights:
+  - Localization of marketing and documentation pages across seven languages
+- date: '2026-05-07'
+  breaking: false
+  highlights:
+  - 'Insights Hub refresh: blog redesigned as a category-driven hub'
+notes: Recent window only; the live changelog page is the source of truth.

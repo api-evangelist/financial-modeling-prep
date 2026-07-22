@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: Financial Modeling Prep Historical Price Full API
+  description: Financial Modeling Prep (FMP) Historical Price Full API — part of the FMP stable REST API. Generated from the
+    official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints
+    have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.
+  version: stable
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com/
+servers:
+- url: https://financialmodelingprep.com/stable
+  description: Financial Modeling Prep stable API
+security:
+- apiKeyQuery: []
+- apiKeyHeader: []
+tags:
+- name: Historical Price Full
+paths:
+  /historical-price-eod/full:
+    get:
+      operationId: getHistoricalPrice
+      summary: Get full historical end-of-day prices for a symbol
+      description: Get full historical end-of-day prices for a symbol. Documented at https://site.financialmodelingprep.com/developer/docs.
+      tags:
+      - Historical Price Full
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        schema:
+          type: string
+        example: AAPL
+      - name: from
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+        example: '2026-01-27'
+      - name: to
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+        example: '2026-04-27'
+      responses:
+        '200':
+          description: Historical Price Full data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HistoricalPrice'
+              example:
+              - symbol: AAPL
+                date: '2026-06-05'
+                open: 312.86
+                high: 315.17
+                low: 307.15
+                close: 307.34
+                volume: 65310502
+                change: -5.52
+                changePercent: -1.76
+                vwap: 310.63
+        '401':
+          description: Invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
+                  for more information.
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+      description: FMP API key passed as a query parameter (?apikey=YOUR_API_KEY, or &apikey= when other query parameters
+        exist).
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: apikey
+      description: 'FMP API key passed in the request header as apikey: YOUR_API_KEY.'
+  schemas:
+    HistoricalPrice:
+      type: object
+      properties:
+        symbol:
+          type: string
+        date:
+          type: string
+        open:
+          type: number
+        high:
+          type: number
+        low:
+          type: number
+        close:
+          type: number
+        volume:
+          type: integer
+        change:
+          type: number
+        changePercent:
+          type: number
+        vwap:
+          type: number
+    Error:
+      type: object
+      properties:
+        Error Message:
+          type: string
+      description: 'FMP error envelope, e.g. {"Error Message": "Invalid API KEY. ..."}'

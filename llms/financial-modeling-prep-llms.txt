@@ -1,0 +1,8 @@
+# FMP (Financial Modeling Prep)
+
+Financial data API providing real-time and historical data for stocks, ETFs, forex, crypto, fundamentals, earnings, insider trades, SEC filings, and more.
+
+## Documentation
+
+- [API Documentation](https://site.financialmodelingprep.com/api-docs.md): Full endpoint reference for all stable API endpoints, including descriptions, parameters, and example responses
+- [Pricing Plans](https://site.financialmodelingprep.com/pricing.md): Personal use plan tiers, API call limits, historical data ranges, and per-endpoint access restrictions

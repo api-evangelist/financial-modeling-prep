@@ -1,0 +1,20 @@
+generated: '2026-07-22'
+method: searched
+source: live probe of https://financialmodelingprep.com/stable/quote (2026-07-22) + https://site.financialmodelingprep.com/api-docs.md
+format: custom-envelope
+envelope:
+  field: Error Message
+  content_type: application/json
+  example:
+    Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
+      for more information.
+problems:
+- status: 401
+  title: Invalid API KEY
+  detail: The apikey query parameter or header is missing or invalid.
+  remediation: Create a free API key at https://site.financialmodelingprep.com/register and pass it as ?apikey=
+    or the apikey header. See https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid.
+  evidence: Observed live on GET /stable/quote?symbol=AAPL without a key (2026-07-22).
+notes: FMP additionally gates endpoints, symbols, historical range, and API-call volume by plan (see plans/ and
+  https://site.financialmodelingprep.com/pricing.md); the specific HTTP status codes for plan-gate and rate-limit
+  rejections are not documented publicly and are not asserted here.

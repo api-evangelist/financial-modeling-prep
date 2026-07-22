@@ -1,0 +1,234 @@
+asyncapi: 3.0.0
+info:
+  title: Financial Modeling Prep WebSocket API
+  version: stable
+  description: Real-time market data streaming from Financial Modeling Prep. Authenticate with a login event carrying
+    your API key, then subscribe to tickers or predefined market streams. Derived from the Websockets section of
+    the official FMP API documentation (no provider-published AsyncAPI exists).
+  externalDocs:
+    url: https://site.financialmodelingprep.com/api-docs.md
+    description: FMP API documentation, Websockets section
+servers:
+  standard:
+    host: socket.financialmodelingprep.com
+    protocol: wss
+    description: Standard WebSocket server (login event with API key).
+  socketio:
+    host: socketio.financialmodelingprep.com
+    protocol: wss
+    description: Socket.IO server (same login/subscribe semantics over the Socket.IO protocol).
+channels:
+  stream:
+    address: /
+    description: 'Single duplex channel: send login/subscribe/unsubscribe events, receive login confirmations, quote
+      updates, and heartbeats.'
+    messages:
+      login:
+        $ref: '#/components/messages/login'
+      subscribe:
+        $ref: '#/components/messages/subscribe'
+      unsubscribe:
+        $ref: '#/components/messages/unsubscribe'
+      loginResponse:
+        $ref: '#/components/messages/loginResponse'
+      quote:
+        $ref: '#/components/messages/quote'
+      heartbeat:
+        $ref: '#/components/messages/heartbeat'
+operations:
+  sendLogin:
+    action: send
+    channel:
+      $ref: '#/channels/stream'
+    messages:
+    - $ref: '#/channels/stream/messages/login'
+    summary: Authenticate the session by sending your API key in a login event.
+  sendSubscribe:
+    action: send
+    channel:
+      $ref: '#/channels/stream'
+    messages:
+    - $ref: '#/channels/stream/messages/subscribe'
+    summary: Subscribe to live price updates for tickers, or to a predefined market stream.
+  sendUnsubscribe:
+    action: send
+    channel:
+      $ref: '#/channels/stream'
+    messages:
+    - $ref: '#/channels/stream/messages/unsubscribe'
+    summary: Stop receiving updates for a ticker or market stream.
+  receiveQuote:
+    action: receive
+    channel:
+      $ref: '#/channels/stream'
+    messages:
+    - $ref: '#/channels/stream/messages/quote'
+    summary: Receive real-time quote updates for subscribed tickers/streams.
+  receiveHeartbeat:
+    action: receive
+    channel:
+      $ref: '#/channels/stream'
+    messages:
+    - $ref: '#/channels/stream/messages/heartbeat'
+    summary: Regular heartbeat events signal an active connection; use to auto-reconnect.
+components:
+  messages:
+    login:
+      name: login
+      summary: Authenticate with API key
+      payload:
+        type: object
+        required:
+        - event
+        - data
+        properties:
+          event:
+            const: login
+          data:
+            type: object
+            properties:
+              apiKey:
+                type: string
+    subscribe:
+      name: subscribe
+      summary: Subscribe to tickers (tickers) or a market stream (stream)
+      payload:
+        type: object
+        required:
+        - event
+        properties:
+          event:
+            const: subscribe
+          tickers:
+            oneOf:
+            - type: string
+            - type: array
+              items:
+                type: string
+            description: '"AAPL" or ["AAPL", "MSFT", "^GSPC"]'
+          stream:
+            type: string
+            description: Exchange streams (nasdaq-basic-w-nls-plus, iex-tops, tsx-level-1, tsxv-level-1, lse-level-1,
+              cboe-index-main), FMP streams (fmp-crypto-stream, fmp-index-stream, fmp-commodity-stream, fmp-currency-stream,
+              fmp-us-equities-stream, fmp-us-otc-stream, fmp-uk-equities-stream, fmp-ca-equities-stream), or any
+              stream with a -delayed suffix.
+    unsubscribe:
+      name: unsubscribe
+      summary: Unsubscribe a ticker or market stream
+      payload:
+        type: object
+        required:
+        - event
+        properties:
+          event:
+            const: unsubscribe
+          ticker:
+            oneOf:
+            - type: string
+            - type: array
+              items:
+                type: string
+          stream:
+            type: string
+    loginResponse:
+      name: loginResponse
+      summary: Login confirmation
+      payload:
+        type: object
+        properties:
+          event:
+            const: login
+          data:
+            type: object
+            properties:
+              status:
+                type: integer
+              message:
+                type: string
+        examples:
+        - event: login
+          data:
+            status: 200
+            message: Authenticated
+    quote:
+      name: quote
+      summary: Real-time quote update
+      payload:
+        type: object
+        description: Real-time quote update (fields from the documented example response).
+        properties:
+          symbol:
+            type: string
+          name:
+            type: string
+          price:
+            type: number
+          changesPercentage:
+            type: number
+          change:
+            type: number
+          dayLow:
+            type: number
+          dayHigh:
+            type: number
+          yearHigh:
+            type: number
+          yearLow:
+            type: number
+          marketCap:
+            type:
+            - number
+            - 'null'
+          priceAvg50:
+            type: number
+          priceAvg200:
+            type: number
+          exchange:
+            type: string
+          volume:
+            type:
+            - number
+            - 'null'
+          avgVolume:
+            type:
+            - number
+            - 'null'
+          open:
+            type: number
+          previousClose:
+            type: number
+          eps:
+            type:
+            - number
+            - 'null'
+          pe:
+            type:
+            - number
+            - 'null'
+          earningsAnnouncement:
+            type:
+            - string
+            - 'null'
+          sharesOutstanding:
+            type:
+            - number
+            - 'null'
+          timestamp:
+            type: integer
+    heartbeat:
+      name: heartbeat
+      summary: Connection heartbeat
+      payload:
+        type: object
+        properties:
+          event:
+            const: heartbeat
+          timestamp:
+            type: integer
+        examples:
+        - event: heartbeat
+          timestamp: 1747473420002
+x-provenance:
+  generated: '2026-07-22'
+  method: derived
+  source: https://site.financialmodelingprep.com/api-docs.md (Websockets section)

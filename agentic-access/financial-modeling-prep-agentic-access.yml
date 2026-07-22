@@ -1,6 +1,10 @@
-generated: '2026-07-15'
+generated: '2026-07-22'
 method: generated
-source: openapi/financial-modeling-prep-openapi.yml
+source: openapi/financial-modeling-prep-balance-sheet-statement-api-openapi.yml, openapi/financial-modeling-prep-cash-flow-statement-api-openapi.yml,
+  openapi/financial-modeling-prep-historical-price-full-api-openapi.yml, openapi/financial-modeling-prep-income-statement-api-openapi.yml,
+  openapi/financial-modeling-prep-insider-trading-api-openapi.yml, openapi/financial-modeling-prep-profile-api-openapi.yml,
+  openapi/financial-modeling-prep-quote-api-openapi.yml, openapi/financial-modeling-prep-ratios-api-openapi.yml,
+  openapi/financial-modeling-prep-search-api-openapi.yml, openapi/financial-modeling-prep-stock-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
@@ -12,37 +16,7 @@ summary:
     read: 10
   human_in_the_loop_required: 0
 operations:
-- path: /quote/{symbol}
-  method: get
-  operationId: getQuote
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /historical-price-full/{symbol}
-  method: get
-  operationId: getHistoricalPrice
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /income-statement/{symbol}
-  method: get
-  operationId: getIncomeStatement
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /balance-sheet-statement/{symbol}
+- path: /balance-sheet-statement
   method: get
   operationId: getBalanceSheet
   x-agentic-access:
@@ -52,7 +26,7 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /cash-flow-statement/{symbol}
+- path: /cash-flow-statement
   method: get
   operationId: getCashFlowStatement
   x-agentic-access:
@@ -62,9 +36,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /profile/{symbol}
+- path: /historical-price-eod/full
   method: get
-  operationId: getCompanyProfile
+  operationId: getHistoricalPrice
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -72,9 +46,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /search
+- path: /income-statement
   method: get
-  operationId: searchSymbols
+  operationId: getIncomeStatement
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -82,17 +56,7 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /stock/list
-  method: get
-  operationId: listStocks
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /insider-trading
+- path: /insider-trading/search
   method: get
   operationId: getInsiderTrading
   x-agentic-access:
@@ -102,9 +66,49 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /ratios/{symbol}
+- path: /profile
+  method: get
+  operationId: getCompanyProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /quote
+  method: get
+  operationId: getQuote
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ratios
   method: get
   operationId: getFinancialRatios
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search-symbol
+  method: get
+  operationId: searchSymbols
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /stock-list
+  method: get
+  operationId: listStocks
   x-agentic-access:
     action-class: connected
     consequence: read

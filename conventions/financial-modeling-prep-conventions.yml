@@ -1,0 +1,53 @@
+generated: '2026-07-22'
+method: searched
+source: https://site.financialmodelingprep.com/api-docs.md + https://site.financialmodelingprep.com/pricing.md
+authentication:
+  style: api-key
+  locations:
+  - in: query
+    name: apikey
+  - in: header
+    name: apikey
+  notes: Append ?apikey=YOUR_API_KEY (or &apikey= when other query parameters exist), or send an apikey request
+    header. See authentication/financial-modeling-prep-authentication.yml.
+idempotency:
+  supported: false
+  notes: Read-only GET surface; no Idempotency-Key contract published.
+pagination:
+  style: offset
+  params:
+  - page
+  - limit
+  notes: page starts at 0; limit caps result count. Present on list/search endpoints (insider trading search, stock
+    screener, etc.).
+parameters:
+  notes: 'FMP docs instruct: do not assume endpoints have parameters other than the ones explicitly specified for
+    each endpoint.'
+versioning:
+  scheme: stable-channel
+  base_url: https://financialmodelingprep.com/stable
+  notes: Legacy /api/v3 and /api/v4 are discontinued. See lifecycle/.
+error_envelope:
+  shape: '{"Error Message": "..."}'
+  notes: See errors/financial-modeling-prep-problem-types.yml.
+rate_limits:
+  signaling: not documented
+  plan_limits:
+  - plan: Basic (free)
+    limit: 250 API calls/day
+  - plan: Starter
+    limit: 300 API calls/min
+  - plan: Premium
+    limit: 750 API calls/min
+  - plan: Ultimate
+    limit: 3000 API calls/min
+  notes: A trailing 30-day bandwidth consumption policy also applies (FAQ). See rate-limits/financial-modeling-prep-rate-limits.yml.
+streaming:
+  websocket: wss://socket.financialmodelingprep.com
+  socketio: wss://socketio.financialmodelingprep.com
+  notes: Login with API key, then subscribe/unsubscribe events. See asyncapi/.
+cross_links:
+- errors/financial-modeling-prep-problem-types.yml
+- lifecycle/financial-modeling-prep-lifecycle.yml
+- authentication/financial-modeling-prep-authentication.yml
+- rate-limits/financial-modeling-prep-rate-limits.yml

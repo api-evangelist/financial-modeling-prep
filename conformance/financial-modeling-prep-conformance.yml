@@ -1,0 +1,32 @@
+generated: '2026-07-22'
+method: derived
+source: openapi/ + https://site.financialmodelingprep.com/api-docs.md
+standards:
+- id: api-keys
+  conforms: true
+  evidence: All stable endpoints authenticate with an API key sent as ?apikey= query parameter or apikey request
+    header (documented in api-docs.md).
+- id: oauth2
+  conforms: false
+  evidence: The public market-data API uses API keys, not OAuth. RFC 8414 metadata exists at /.well-known/oauth-authorization-server
+    (authorization_code + PKCE) for the FMP platform, but OAuth is not a documented auth method for the data API.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 401; no OIDC discovery published.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: 'Errors use a custom envelope {"Error Message": "..."} (observed live on 401), not application/problem+json.'
+- id: pagination
+  conforms: true
+  evidence: Offset pagination via page + limit query parameters on list/search endpoints (e.g. /stable/insider-trading/search?page=0&limit=100).
+- id: idempotency
+  conforms: true
+  evidence: The captured public surface is read-only GET (naturally idempotent). No Idempotency-Key header contract
+    is published.
+- id: websockets
+  conforms: true
+  evidence: Real-time streaming over WebSocket (wss://socket.financialmodelingprep.com) and Socket.IO (wss://socketio.financialmodelingprep.com),
+    documented in the Websockets section of api-docs.md.
+- id: json-api
+  conforms: false
+  evidence: Responses are plain JSON arrays/objects, not JSON:API documents.

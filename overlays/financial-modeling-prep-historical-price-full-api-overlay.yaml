@@ -1,0 +1,24 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Financial Modeling Prep historical-price-full-api
+  version: 1.0.0
+extends: openapi/financial-modeling-prep-historical-price-full-api-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      provider: financial-modeling-prep
+      generated: '2026-07-22'
+      migration: Regenerated 2026-07-22 against the stable API (https://financialmodelingprep.com/stable) from the
+        official docs; the legacy /api/v3 surface previously described here is discontinued.
+      artifacts:
+      - authentication/financial-modeling-prep-authentication.yml
+      - errors/financial-modeling-prep-problem-types.yml
+      - conventions/financial-modeling-prep-conventions.yml
+- target: $.paths['/historical-price-eod/full'].get
+  update:
+    x-plan-gating: Endpoint availability, symbol coverage, and historical range vary by plan — see plans/financial-modeling-prep-plans-pricing.yml.
+x-provenance:
+  generated: '2026-07-22'
+  method: generated
+  source: openapi/financial-modeling-prep-historical-price-full-api-openapi.yml#getHistoricalPrice

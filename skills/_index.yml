@@ -1,0 +1,15 @@
+generated: '2026-07-22'
+method: generated
+skills:
+  - file: financial-modeling-prep-company-fundamentals.md
+    name: Review a company's fundamentals
+    api: openapi/financial-modeling-prep-profile-api-openapi.yml
+    operations: [getCompanyProfile, getIncomeStatement, getBalanceSheet, getCashFlowStatement, getFinancialRatios]
+  - file: financial-modeling-prep-quote-and-history.md
+    name: Look up a quote and price history
+    api: openapi/financial-modeling-prep-quote-api-openapi.yml
+    operations: [searchSymbols, getQuote, getHistoricalPrice]
+  - file: financial-modeling-prep-insider-trading-screen.md
+    name: Screen insider trading activity
+    api: openapi/financial-modeling-prep-insider-trading-api-openapi.yml
+    operations: [getInsiderTrading, getQuote]

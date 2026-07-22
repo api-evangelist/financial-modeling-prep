@@ -1,0 +1,26 @@
+generated: '2026-07-22'
+method: searched
+hosts:
+- host: https://financialmodelingprep.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: financial-modeling-prep-oauth-authorization-server.json
+    note: RFC 8414 authorization-server metadata (authorization_code + refresh_token, PKCE S256). Serves the FMP
+      platform OAuth; the public market-data API itself authenticates with API keys.
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+- host: https://site.financialmodelingprep.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/financial-modeling-prep-llms.txt
+    note: Published llms.txt linking the full markdown API documentation and pricing.

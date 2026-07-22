@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: Financial Modeling Prep Insider Trading API
+  description: Financial Modeling Prep (FMP) Insider Trading API — part of the FMP stable REST API. Generated from the official
+    FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have
+    been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.
+  version: stable
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com/
+servers:
+- url: https://financialmodelingprep.com/stable
+  description: Financial Modeling Prep stable API
+security:
+- apiKeyQuery: []
+- apiKeyHeader: []
+tags:
+- name: Insider Trading
+paths:
+  /insider-trading/search:
+    get:
+      operationId: getInsiderTrading
+      summary: Search insider trading activity by company or symbol
+      description: Search insider trading activity by company or symbol. Documented at https://site.financialmodelingprep.com/developer/docs.
+      tags:
+      - Insider Trading
+      parameters:
+      - name: symbol
+        in: query
+        required: false
+        schema:
+          type: string
+        example: AAPL
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: number
+        example: '0'
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: number
+        example: '100'
+      - name: reportingCik
+        in: query
+        required: false
+        schema:
+          type: string
+        example: 0001496686
+      - name: companyCik
+        in: query
+        required: false
+        schema:
+          type: string
+        example: 0000320193
+      - name: transactionType
+        in: query
+        required: false
+        schema:
+          type: string
+        example: S-Sale
+      responses:
+        '200':
+          description: Insider Trading data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InsiderTrade'
+              example:
+              - symbol: WHF
+                filingDate: '2026-06-05'
+                transactionDate: '2026-06-05'
+                reportingCik: '0001050047'
+                companyCik: 0001552198
+                transactionType: P-Purchase
+                securitiesOwned: 309607
+                reportingName: BOLDUC JOHN
+                typeOfOwner: director
+                acquisitionOrDisposition: A
+                directOrIndirect: I
+                formType: '4'
+                securitiesTransacted: 3570
+                price: 6.77
+                securityName: Common Stock, par value $0.001 per share
+                url: https://www.sec.gov/Archives/edgar/data/1552198/000110465926071091/0001104659-26-071091-index.htm
+        '401':
+          description: Invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
+                  for more information.
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+      description: FMP API key passed as a query parameter (?apikey=YOUR_API_KEY, or &apikey= when other query parameters
+        exist).
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: apikey
+      description: 'FMP API key passed in the request header as apikey: YOUR_API_KEY.'
+  schemas:
+    InsiderTrade:
+      type: object
+      properties:
+        symbol:
+          type: string
+        filingDate:
+          type: string
+        transactionDate:
+          type: string
+        reportingCik:
+          type: string
+        companyCik:
+          type: string
+        transactionType:
+          type: string
+        securitiesOwned:
+          type: integer
+        reportingName:
+          type: string
+        typeOfOwner:
+          type: string
+        acquisitionOrDisposition:
+          type: string
+        directOrIndirect:
+          type: string
+        formType:
+          type: string
+        securitiesTransacted:
+          type: integer
+        price:
+          type: number
+        securityName:
+          type: string
+        url:
+          type: string
+    Error:
+      type: object
+      properties:
+        Error Message:
+          type: string
+      description: 'FMP error envelope, e.g. {"Error Message": "Invalid API KEY. ..."}'

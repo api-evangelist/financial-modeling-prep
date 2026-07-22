@@ -1,0 +1,204 @@
+openapi: 3.1.0
+info:
+  title: Financial Modeling Prep Income Statement API
+  description: Financial Modeling Prep (FMP) Income Statement API — part of the FMP stable REST API. Generated from the official
+    FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have
+    been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.
+  version: stable
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com/
+servers:
+- url: https://financialmodelingprep.com/stable
+  description: Financial Modeling Prep stable API
+security:
+- apiKeyQuery: []
+- apiKeyHeader: []
+tags:
+- name: Income Statement
+paths:
+  /income-statement:
+    get:
+      operationId: getIncomeStatement
+      summary: Get income statements for a company
+      description: Get income statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs.
+      tags:
+      - Income Statement
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        schema:
+          type: string
+        example: AAPL
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: number
+        example: '5'
+      - name: period
+        in: query
+        required: false
+        schema:
+          type: string
+        example: Q1,Q2,Q3,Q4,FY,annual,quarter
+      responses:
+        '200':
+          description: Income Statement data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IncomeStatement'
+              example:
+              - date: '2024-09-28'
+                symbol: AAPL
+                reportedCurrency: USD
+                cik: 0000320193
+                filingDate: '2024-11-01'
+                acceptedDate: '2024-11-01 06:01:36'
+                fiscalYear: '2024'
+                period: FY
+                revenue: 391035000000
+                costOfRevenue: 210352000000
+                grossProfit: 180683000000
+                researchAndDevelopmentExpenses: 31370000000
+                generalAndAdministrativeExpenses: 0
+                sellingAndMarketingExpenses: 0
+                sellingGeneralAndAdministrativeExpenses: 26097000000
+                otherExpenses: 0
+                operatingExpenses: 57467000000
+                costAndExpenses: 267819000000
+                netInterestIncome: 0
+                interestIncome: 0
+                interestExpense: 0
+                depreciationAndAmortization: 11445000000
+                ebitda: 134661000000
+                ebit: 123216000000
+                nonOperatingIncomeExcludingInterest: 0
+                operatingIncome: 123216000000
+                totalOtherIncomeExpensesNet: 269000000
+                incomeBeforeTax: 123485000000
+                incomeTaxExpense: 29749000000
+                netIncomeFromContinuingOperations: 93736000000
+                netIncomeFromDiscontinuedOperations: 0
+                otherAdjustmentsToNetIncome: 0
+                netIncome: 93736000000
+                netIncomeDeductions: 0
+                bottomLineNetIncome: 93736000000
+                eps: 6.11
+                epsDiluted: 6.08
+                weightedAverageShsOut: 15343783000
+                weightedAverageShsOutDil: 15408095000
+        '401':
+          description: Invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
+                  for more information.
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+      description: FMP API key passed as a query parameter (?apikey=YOUR_API_KEY, or &apikey= when other query parameters
+        exist).
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: apikey
+      description: 'FMP API key passed in the request header as apikey: YOUR_API_KEY.'
+  schemas:
+    IncomeStatement:
+      type: object
+      properties:
+        date:
+          type: string
+        symbol:
+          type: string
+        reportedCurrency:
+          type: string
+        cik:
+          type: string
+        filingDate:
+          type: string
+        acceptedDate:
+          type: string
+        fiscalYear:
+          type: string
+        period:
+          type: string
+        revenue:
+          type: integer
+        costOfRevenue:
+          type: integer
+        grossProfit:
+          type: integer
+        researchAndDevelopmentExpenses:
+          type: integer
+        generalAndAdministrativeExpenses:
+          type: integer
+        sellingAndMarketingExpenses:
+          type: integer
+        sellingGeneralAndAdministrativeExpenses:
+          type: integer
+        otherExpenses:
+          type: integer
+        operatingExpenses:
+          type: integer
+        costAndExpenses:
+          type: integer
+        netInterestIncome:
+          type: integer
+        interestIncome:
+          type: integer
+        interestExpense:
+          type: integer
+        depreciationAndAmortization:
+          type: integer
+        ebitda:
+          type: integer
+        ebit:
+          type: integer
+        nonOperatingIncomeExcludingInterest:
+          type: integer
+        operatingIncome:
+          type: integer
+        totalOtherIncomeExpensesNet:
+          type: integer
+        incomeBeforeTax:
+          type: integer
+        incomeTaxExpense:
+          type: integer
+        netIncomeFromContinuingOperations:
+          type: integer
+        netIncomeFromDiscontinuedOperations:
+          type: integer
+        otherAdjustmentsToNetIncome:
+          type: integer
+        netIncome:
+          type: integer
+        netIncomeDeductions:
+          type: integer
+        bottomLineNetIncome:
+          type: integer
+        eps:
+          type: number
+        epsDiluted:
+          type: number
+        weightedAverageShsOut:
+          type: integer
+        weightedAverageShsOutDil:
+          type: integer
+    Error:
+      type: object
+      properties:
+        Error Message:
+          type: string
+      description: 'FMP error envelope, e.g. {"Error Message": "Invalid API KEY. ..."}'

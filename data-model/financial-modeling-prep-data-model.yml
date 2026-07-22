@@ -1,0 +1,89 @@
+generated: '2026-07-22'
+method: derived
+source: openapi/ (schemas + shared identifier fields)
+entities:
+- name: Company
+  key: symbol
+  notes: Identified by ticker symbol; SEC registrants also carry a cik.
+  schemas:
+  - CompanyProfile
+  - StockListing
+  - SymbolSearchResult
+- name: Quote
+  key: symbol
+  schemas:
+  - Quote
+- name: HistoricalPrice
+  key: symbol + date
+  schemas:
+  - HistoricalPrice
+- name: IncomeStatement
+  key: symbol + date + period
+  schemas:
+  - IncomeStatement
+- name: BalanceSheetStatement
+  key: symbol + date + period
+  schemas:
+  - BalanceSheetStatement
+- name: CashFlowStatement
+  key: symbol + date + period
+  schemas:
+  - CashFlowStatement
+- name: FinancialRatios
+  key: symbol + date + period
+  schemas:
+  - FinancialRatios
+- name: InsiderTrade
+  key: symbol + filingDate + reportingCik
+  schemas:
+  - InsiderTrade
+relationships:
+- from: Quote
+  to: Company
+  type: belongs_to
+  via: symbol
+- from: HistoricalPrice
+  to: Company
+  type: belongs_to
+  via: symbol
+- from: IncomeStatement
+  to: Company
+  type: belongs_to
+  via: symbol
+- from: BalanceSheetStatement
+  to: Company
+  type: belongs_to
+  via: symbol
+- from: CashFlowStatement
+  to: Company
+  type: belongs_to
+  via: symbol
+- from: FinancialRatios
+  to: Company
+  type: belongs_to
+  via: symbol
+- from: InsiderTrade
+  to: Company
+  type: belongs_to
+  via: symbol / companyCik
+- from: Company
+  to: IncomeStatement
+  type: has_many
+  via: symbol
+- from: Company
+  to: BalanceSheetStatement
+  type: has_many
+  via: symbol
+- from: Company
+  to: CashFlowStatement
+  type: has_many
+  via: symbol
+- from: Company
+  to: InsiderTrade
+  type: has_many
+  via: companyCik
+identifiers:
+- field: symbol
+  notes: Ticker symbol, the primary cross-endpoint key (e.g. AAPL).
+- field: cik
+  notes: SEC Central Index Key; appears as cik on statements, reportingCik/companyCik on insider trades.

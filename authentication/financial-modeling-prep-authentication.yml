@@ -1,15 +1,29 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/financial-modeling-prep-openapi.yml
+generated: '2026-07-22'
+method: searched
+source: openapi/ securitySchemes + https://site.financialmodelingprep.com/api-docs.md
+docs: https://site.financialmodelingprep.com/developer/docs
 summary:
   types:
   - apiKey
   api_key_in:
   - query
+  - header
+  oauth2_flows: []
 schemes:
 - name: apiKeyQuery
   type: apiKey
   in: query
   parameter: apikey
+  notes: Append ?apikey=YOUR_API_KEY to every request; use &apikey= when other query parameters exist.
   sources:
-  - openapi/financial-modeling-prep-openapi.yml
+  - openapi/financial-modeling-prep-quote-api-openapi.yml
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: apikey
+  notes: 'Alternatively include the API key in the request header as apikey: YOUR_API_KEY.'
+  sources:
+  - openapi/financial-modeling-prep-quote-api-openapi.yml
+notes: API keys are issued on signup (https://site.financialmodelingprep.com/register). The platform publishes RFC
+  8414 OAuth authorization-server metadata at /.well-known/oauth-authorization-server, but OAuth is not a documented
+  authentication method for the market-data API.

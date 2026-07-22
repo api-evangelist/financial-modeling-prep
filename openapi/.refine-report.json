@@ -1,0 +1,32 @@
+{
+  "provider": "financial-modeling-prep",
+  "sources": [
+    "financial-modeling-prep-balance-sheet-statement-api-openapi.yml",
+    "financial-modeling-prep-cash-flow-statement-api-openapi.yml",
+    "financial-modeling-prep-historical-price-full-api-openapi.yml",
+    "financial-modeling-prep-income-statement-api-openapi.yml",
+    "financial-modeling-prep-insider-trading-api-openapi.yml",
+    "financial-modeling-prep-profile-api-openapi.yml",
+    "financial-modeling-prep-quote-api-openapi.yml",
+    "financial-modeling-prep-ratios-api-openapi.yml",
+    "financial-modeling-prep-search-api-openapi.yml",
+    "financial-modeling-prep-stock-api-openapi.yml"
+  ],
+  "outputs": [
+    "financial-modeling-prep-balance-sheet-statement-api-openapi.yml",
+    "financial-modeling-prep-cash-flow-statement-api-openapi.yml",
+    "financial-modeling-prep-historical-price-full-api-openapi.yml",
+    "financial-modeling-prep-income-statement-api-openapi.yml",
+    "financial-modeling-prep-insider-trading-api-openapi.yml",
+    "financial-modeling-prep-profile-api-openapi.yml",
+    "financial-modeling-prep-quote-api-openapi.yml",
+    "financial-modeling-prep-ratios-api-openapi.yml",
+    "financial-modeling-prep-search-api-openapi.yml",
+    "financial-modeling-prep-stock-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

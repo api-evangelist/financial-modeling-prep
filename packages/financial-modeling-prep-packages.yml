@@ -1,0 +1,31 @@
+generated: '2026-07-22'
+method: searched
+source: npm registry search + PyPI probes + FinancialModelingPrep GitHub org
+note: Financial Modeling Prep publishes no first-party client SDKs. The FinancialModelingPrep GitHub org contains
+  documentation/example repos only (stocks-api, income-statement-api, balance-sheet-statement-api, insider-trading-api,
+  API3-integration). The packages below are community-maintained wrappers.
+packages:
+- language: python
+  registry: pypi
+  name: fmpsdk
+  url: https://pypi.org/project/fmpsdk/
+  install: pip install fmpsdk
+  official: false
+- language: python
+  registry: pypi
+  name: fmp-python
+  url: https://pypi.org/project/fmp-python/
+  install: pip install fmp-python
+  official: false
+- language: javascript
+  registry: npm
+  name: financialmodelingprep
+  url: https://www.npmjs.com/package/financialmodelingprep
+  install: npm install financialmodelingprep
+  official: false
+- language: javascript
+  registry: npm
+  name: financialmodelingprep-node
+  url: https://www.npmjs.com/package/financialmodelingprep-node
+  install: npm install financialmodelingprep-node
+  official: false

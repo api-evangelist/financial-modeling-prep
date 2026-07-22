@@ -1,0 +1,41 @@
+generated: '2026-07-22'
+method: derived
+status: candidate
+source: openapi/ (one candidate tool per operationId)
+note: No official Financial Modeling Prep MCP server was found in the FMP docs, the FinancialModelingPrep GitHub
+  org, or the MCP registry as of this round. This is a candidate tool list derived from the OpenAPI operations in
+  this repo.
+server:
+  name: financial-modeling-prep
+  transport: http
+tools:
+- name: search_symbols
+  description: Search stock ticker symbols by company name or symbol
+  source_operation: openapi/financial-modeling-prep-search-api-openapi.yml#searchSymbols
+- name: list_stocks
+  description: List all available company symbols
+  source_operation: openapi/financial-modeling-prep-stock-api-openapi.yml#listStocks
+- name: get_quote
+  description: Get a real-time stock quote for a symbol
+  source_operation: openapi/financial-modeling-prep-quote-api-openapi.yml#getQuote
+- name: get_company_profile
+  description: Get the company profile for a symbol
+  source_operation: openapi/financial-modeling-prep-profile-api-openapi.yml#getCompanyProfile
+- name: get_income_statement
+  description: Get income statements for a company
+  source_operation: openapi/financial-modeling-prep-income-statement-api-openapi.yml#getIncomeStatement
+- name: get_balance_sheet
+  description: Get balance sheet statements for a company
+  source_operation: openapi/financial-modeling-prep-balance-sheet-statement-api-openapi.yml#getBalanceSheet
+- name: get_cash_flow_statement
+  description: Get cash flow statements for a company
+  source_operation: openapi/financial-modeling-prep-cash-flow-statement-api-openapi.yml#getCashFlowStatement
+- name: get_financial_ratios
+  description: Get financial ratios for a company
+  source_operation: openapi/financial-modeling-prep-ratios-api-openapi.yml#getFinancialRatios
+- name: get_historical_price
+  description: Get full historical end-of-day prices for a symbol
+  source_operation: openapi/financial-modeling-prep-historical-price-full-api-openapi.yml#getHistoricalPrice
+- name: get_insider_trading
+  description: Search insider trading activity by company or symbol
+  source_operation: openapi/financial-modeling-prep-insider-trading-api-openapi.yml#getInsiderTrading

@@ -1,72 +1,289 @@
 aid: financial-modeling-prep
 name: Financial Modeling Prep
-description: >-
-  Financial Modeling Prep (FMP) provides financial market data via REST APIs, including real-time and historical stock
-  quotes, company fundamentals, income statements, balance sheets, cash flow statements, financial ratios, insider
-  transactions, earnings, dividends, ETF and mutual fund data, and economic indicators - with up to 30 years of
-  historical coverage.
+description: Financial Modeling Prep (FMP) provides financial market data via REST APIs, including real-time and historical
+  stock quotes, company fundamentals, income statements, balance sheets, cash flow statements, financial ratios, insider transactions,
+  earnings, dividends, ETF and mutual fund data, and economic indicators - with up to 30 years of historical coverage.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/financial-modeling-prep.png
 access: 3rd-Party
 created: '2025-02-24'
-modified: '2026-05-19'
+modified: '2026-07-22'
 position: Consumer
 tags:
-  - Financial Data
-  - Market Data
-  - Stocks
-  - Quotes
-  - Fundamentals
-  - Financial Statements
-  - Historical
+- Financial Data
+- Market Data
+- Stocks
+- Quotes
+- Fundamentals
+- Financial Statements
+- Historical
 url: https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: financial-modeling-prep:financial-modeling-prep
-    name: Financial Modeling Prep API
-    description: >-
-      REST API offering real-time and historical stock quotes, financial statements, company profiles, ratios, insider
-      trading, ETFs, and economic data. Authentication via API key passed as the apikey query parameter.
-    humanURL: https://site.financialmodelingprep.com/
-    baseURL: https://financialmodelingprep.com/api/v3
-    tags:
-      - Financial Data
-      - Market Data
-      - Stocks
-      - Fundamentals
-    properties:
-      - type: Documentation
-        url: https://site.financialmodelingprep.com/developer/docs
-      - type: Signup
-        url: https://site.financialmodelingprep.com/register
-      - type: Pricing
-        url: https://site.financialmodelingprep.com/developer/docs/pricing
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/openapi/financial-modeling-prep-openapi.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/financial-modeling-prep-agentic-access.yml
-  - type: TrustCenter
-    url: security/financial-modeling-prep-trust-center.yml
-  - type: DomainSecurity
-    url: security/financial-modeling-prep-domain-security.yml
-  - type: Authentication
-    url: authentication/financial-modeling-prep-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/FinancialModelingPrep
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/financial-modeling-prep
-  - type: Website
-    url: https://site.financialmodelingprep.com/
+- aid: financial-modeling-prep:financial-modeling-prep-balance-sheet-statement-api
+  name: Financial Modeling Prep Balance Sheet Statement API
+  description: The Balance Sheet Statement API from Financial Modeling Prep — 1 operation(s) for balance sheet statement.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Balance Sheet Statement
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-balance-sheet-statement-api-openapi.yml
   - type: Documentation
     url: https://site.financialmodelingprep.com/developer/docs
   - type: Signup
     url: https://site.financialmodelingprep.com/register
   - type: Pricing
     url: https://site.financialmodelingprep.com/developer/docs/pricing
-  - type: Blog
-    url: https://site.financialmodelingprep.com/market-news
+  - type: Overlay
+    url: overlays/financial-modeling-prep-balance-sheet-statement-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-cash-flow-statement-api
+  name: Financial Modeling Prep Cash Flow Statement API
+  description: The Cash Flow Statement API from Financial Modeling Prep — 1 operation(s) for cash flow statement.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Cash Flow Statement
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-cash-flow-statement-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-cash-flow-statement-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-historical-price-full-api
+  name: Financial Modeling Prep Historical Price Full API
+  description: The Historical Price Full API from Financial Modeling Prep — 1 operation(s) for historical price full.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Historical Price Full
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-historical-price-full-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-historical-price-full-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-income-statement-api
+  name: Financial Modeling Prep Income Statement API
+  description: The Income Statement API from Financial Modeling Prep — 1 operation(s) for income statement.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Income Statement
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-income-statement-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-income-statement-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-insider-trading-api
+  name: Financial Modeling Prep Insider Trading API
+  description: The Insider Trading API from Financial Modeling Prep — 1 operation(s) for insider trading.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Insider Trading
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-insider-trading-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-insider-trading-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-profile-api
+  name: Financial Modeling Prep Profile API
+  description: The Profile API from Financial Modeling Prep — 1 operation(s) for profile.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-profile-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-profile-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-quote-api
+  name: Financial Modeling Prep Quote API
+  description: The Quote API from Financial Modeling Prep — 1 operation(s) for quote.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Quote
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-quote-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-quote-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-ratios-api
+  name: Financial Modeling Prep Ratios API
+  description: The Ratios API from Financial Modeling Prep — 1 operation(s) for ratios.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Ratios
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-ratios-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-ratios-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-search-api
+  name: Financial Modeling Prep Search API
+  description: The Search API from Financial Modeling Prep — 1 operation(s) for search.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-search-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-search-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-stock-api
+  name: Financial Modeling Prep Stock API
+  description: The Stock API from Financial Modeling Prep — 1 operation(s) for stock.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Stock
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-stock-api-openapi.yml
+  - type: Documentation
+    url: https://site.financialmodelingprep.com/developer/docs
+  - type: Signup
+    url: https://site.financialmodelingprep.com/register
+  - type: Pricing
+    url: https://site.financialmodelingprep.com/developer/docs/pricing
+  - type: Overlay
+    url: overlays/financial-modeling-prep-stock-api-overlay.yaml
+common:
+- type: AgenticAccess
+  url: agentic-access/financial-modeling-prep-agentic-access.yml
+- type: TrustCenter
+  url: security/financial-modeling-prep-trust-center.yml
+- type: DomainSecurity
+  url: security/financial-modeling-prep-domain-security.yml
+- type: Authentication
+  url: authentication/financial-modeling-prep-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/FinancialModelingPrep
+- type: LinkedIn
+  url: https://www.linkedin.com/company/financial-modeling-prep
+- type: Website
+  url: https://site.financialmodelingprep.com/
+- type: Documentation
+  url: https://site.financialmodelingprep.com/developer/docs
+- type: Signup
+  url: https://site.financialmodelingprep.com/register
+- type: Pricing
+  url: https://site.financialmodelingprep.com/developer/docs/pricing
+- type: Blog
+  url: https://site.financialmodelingprep.com/market-news
+- type: DeveloperPortal
+  url: https://site.financialmodelingprep.com/developer
+- type: APIReference
+  url: https://site.financialmodelingprep.com/developer/docs
+- type: Support
+  url: https://site.financialmodelingprep.com/contact
+- type: TermsOfService
+  url: https://site.financialmodelingprep.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://site.financialmodelingprep.com/privacy-policy
+- type: StatusPage
+  url: https://status.financialmodelingprep.com/
+- type: ChangeLog
+  url: changelog/financial-modeling-prep-changelog.yml
+- type: Deprecation
+  url: lifecycle/financial-modeling-prep-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/financial-modeling-prep-lifecycle.yml
+- type: Conventions
+  url: conventions/financial-modeling-prep-conventions.yml
+- type: ErrorCatalog
+  url: errors/financial-modeling-prep-problem-types.yml
+- type: Conformance
+  url: conformance/financial-modeling-prep-conformance.yml
+- type: Compliance
+  url: https://site.financialmodelingprep.com/trust
+- type: WellKnown
+  url: well-known/financial-modeling-prep-well-known.yml
+- type: LLMsTxt
+  url: llms/financial-modeling-prep-llms.txt
+- type: Packages
+  url: packages/financial-modeling-prep-packages.yml
+- type: MCPServer
+  url: mcp/financial-modeling-prep-mcp.yml
+- type: AsyncAPI
+  url: asyncapi/financial-modeling-prep-websocket-asyncapi.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/financial-modeling-prep-data-model.yml
+- type: Plans
+  url: plans/financial-modeling-prep-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/financial-modeling-prep-rate-limits.yml
+- type: FinOps
+  url: finops/financial-modeling-prep-finops.yml
+- type: Postman
+  url: collections/financial-modeling-prep.postman_collection.json
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

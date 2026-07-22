@@ -1,0 +1,75 @@
+openapi: 3.1.0
+info:
+  title: Financial Modeling Prep Stock API
+  description: Financial Modeling Prep (FMP) Stock API — part of the FMP stable REST API. Generated from the official FMP
+    API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been
+    discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.
+  version: stable
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com/
+servers:
+- url: https://financialmodelingprep.com/stable
+  description: Financial Modeling Prep stable API
+security:
+- apiKeyQuery: []
+- apiKeyHeader: []
+tags:
+- name: Stock
+paths:
+  /stock-list:
+    get:
+      operationId: listStocks
+      summary: List all available company symbols
+      description: List all available company symbols. Documented at https://site.financialmodelingprep.com/developer/docs.
+      tags:
+      - Stock
+      parameters: []
+      responses:
+        '200':
+          description: Stock data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StockListing'
+              example:
+              - symbol: 6898.HK
+                companyName: China Aluminum Cans Holdings Limited
+        '401':
+          description: Invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
+                  for more information.
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+      description: FMP API key passed as a query parameter (?apikey=YOUR_API_KEY, or &apikey= when other query parameters
+        exist).
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: apikey
+      description: 'FMP API key passed in the request header as apikey: YOUR_API_KEY.'
+  schemas:
+    StockListing:
+      type: object
+      properties:
+        symbol:
+          type: string
+        companyName:
+          type: string
+    Error:
+      type: object
+      properties:
+        Error Message:
+          type: string
+      description: 'FMP error envelope, e.g. {"Error Message": "Invalid API KEY. ..."}'
