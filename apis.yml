@@ -214,6 +214,8 @@ apis:
   - type: Overlay
     url: overlays/financial-modeling-prep-stock-api-overlay.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/financial-modeling-prep/overview
 - type: AgenticAccess
   url: agentic-access/financial-modeling-prep-agentic-access.yml
 - type: TrustCenter
