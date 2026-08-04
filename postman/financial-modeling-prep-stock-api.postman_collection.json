@@ -1,0 +1,168 @@
+{
+  "info": {
+    "_postman_id": "044c3e20-4c01-4910-8fc5-67293ea04fa9",
+    "name": "Financial Modeling Prep Stock API",
+    "description": "Financial Modeling Prep (FMP) Stock API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:39:00.000Z",
+    "updatedAt": "2026-07-28T01:39:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-044c3e20-4c01-4910-8fc5-67293ea04fa9"
+  },
+  "item": [
+    {
+      "name": "stock-list",
+      "item": [
+        {
+          "name": "List all available company symbols",
+          "id": "dd4c9a34-143e-4b3e-8437-5e040ebe688d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/stock-list",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "stock-list"
+              ]
+            },
+            "description": "List all available company symbols. Documented at https://site.financialmodelingprep.com/developer/docs."
+          },
+          "response": [
+            {
+              "id": "bc3906c0-7303-450c-ae6f-58a27635fea0",
+              "name": "Stock data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/stock-list?apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "stock-list"
+                  ],
+                  "query": [
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"symbol\": \"<string>\",\n    \"companyName\": \"<string>\"\n  },\n  {\n    \"symbol\": \"<string>\",\n    \"companyName\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:39:00.000Z",
+              "updatedAt": "2026-07-28T01:39:00.000Z",
+              "uid": "35240-bc3906c0-7303-450c-ae6f-58a27635fea0"
+            },
+            {
+              "id": "209de2f5-f709-4dbe-9d38-fb6427eab98a",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/stock-list?apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "stock-list"
+                  ],
+                  "query": [
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Error Message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:39:00.000Z",
+              "updatedAt": "2026-07-28T01:39:00.000Z",
+              "uid": "35240-209de2f5-f709-4dbe-9d38-fb6427eab98a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:39:00.000Z",
+          "updatedAt": "2026-07-28T01:39:00.000Z",
+          "uid": "35240-dd4c9a34-143e-4b3e-8437-5e040ebe688d"
+        }
+      ],
+      "id": "650ae78c-5558-4862-9eae-825f15c79ba1",
+      "createdAt": "2026-07-28T01:39:00.000Z",
+      "updatedAt": "2026-07-28T01:39:00.000Z",
+      "uid": "35240-650ae78c-5558-4862-9eae-825f15c79ba1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}

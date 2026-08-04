@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "b0e83666-32ec-4e7b-95f6-deb32aaa2b6c",
+    "name": "Financial Modeling Prep Income Statement API",
+    "description": "Financial Modeling Prep (FMP) Income Statement API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:38:49.000Z",
+    "updatedAt": "2026-07-28T01:38:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b0e83666-32ec-4e7b-95f6-deb32aaa2b6c"
+  },
+  "item": [
+    {
+      "name": "income-statement",
+      "item": [
+        {
+          "name": "Get income statements for a company",
+          "id": "8a006b6d-0055-46b0-94ed-082401b19a1c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/income-statement?symbol=<string>&limit=<number>&period=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "income-statement"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "symbol",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Get income statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs."
+          },
+          "response": [
+            {
+              "id": "c5b122b2-3eb0-4790-8c63-c9a72f2d61fc",
+              "name": "Income Statement data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/income-statement?symbol=<string>&limit=<number>&period=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "income-statement"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"date\": \"<string>\",\n    \"symbol\": \"<string>\",\n    \"reportedCurrency\": \"<string>\",\n    \"cik\": \"<string>\",\n    \"filingDate\": \"<string>\",\n    \"acceptedDate\": \"<string>\",\n    \"fiscalYear\": \"<string>\",\n    \"period\": \"<string>\",\n    \"revenue\": \"<integer>\",\n    \"costOfRevenue\": \"<integer>\",\n    \"grossProfit\": \"<integer>\",\n    \"researchAndDevelopmentExpenses\": \"<integer>\",\n    \"generalAndAdministrativeExpenses\": \"<integer>\",\n    \"sellingAndMarketingExpenses\": \"<integer>\",\n    \"sellingGeneralAndAdministrativeExpenses\": \"<integer>\",\n    \"otherExpenses\": \"<integer>\",\n    \"operatingExpenses\": \"<integer>\",\n    \"costAndExpenses\": \"<integer>\",\n    \"netInterestIncome\": \"<integer>\",\n    \"interestIncome\": \"<integer>\",\n    \"interestExpense\": \"<integer>\",\n    \"depreciationAndAmortization\": \"<integer>\",\n    \"ebitda\": \"<integer>\",\n    \"ebit\": \"<integer>\",\n    \"nonOperatingIncomeExcludingInterest\": \"<integer>\",\n    \"operatingIncome\": \"<integer>\",\n    \"totalOtherIncomeExpensesNet\": \"<integer>\",\n    \"incomeBeforeTax\": \"<integer>\",\n    \"incomeTaxExpense\": \"<integer>\",\n    \"netIncomeFromContinuingOperations\": \"<integer>\",\n    \"netIncomeFromDiscontinuedOperations\": \"<integer>\",\n    \"otherAdjustmentsToNetIncome\": \"<integer>\",\n    \"netIncome\": \"<integer>\",\n    \"netIncomeDeductions\": \"<integer>\",\n    \"bottomLineNetIncome\": \"<integer>\",\n    \"eps\": \"<number>\",\n    \"epsDiluted\": \"<number>\",\n    \"weightedAverageShsOut\": \"<integer>\",\n    \"weightedAverageShsOutDil\": \"<integer>\"\n  },\n  {\n    \"date\": \"<string>\",\n    \"symbol\": \"<string>\",\n    \"reportedCurrency\": \"<string>\",\n    \"cik\": \"<string>\",\n    \"filingDate\": \"<string>\",\n    \"acceptedDate\": \"<string>\",\n    \"fiscalYear\": \"<string>\",\n    \"period\": \"<string>\",\n    \"revenue\": \"<integer>\",\n    \"costOfRevenue\": \"<integer>\",\n    \"grossProfit\": \"<integer>\",\n    \"researchAndDevelopmentExpenses\": \"<integer>\",\n    \"generalAndAdministrativeExpenses\": \"<integer>\",\n    \"sellingAndMarketingExpenses\": \"<integer>\",\n    \"sellingGeneralAndAdministrativeExpenses\": \"<integer>\",\n    \"otherExpenses\": \"<integer>\",\n    \"operatingExpenses\": \"<integer>\",\n    \"costAndExpenses\": \"<integer>\",\n    \"netInterestIncome\": \"<integer>\",\n    \"interestIncome\": \"<integer>\",\n    \"interestExpense\": \"<integer>\",\n    \"depreciationAndAmortization\": \"<integer>\",\n    \"ebitda\": \"<integer>\",\n    \"ebit\": \"<integer>\",\n    \"nonOperatingIncomeExcludingInterest\": \"<integer>\",\n    \"operatingIncome\": \"<integer>\",\n    \"totalOtherIncomeExpensesNet\": \"<integer>\",\n    \"incomeBeforeTax\": \"<integer>\",\n    \"incomeTaxExpense\": \"<integer>\",\n    \"netIncomeFromContinuingOperations\": \"<integer>\",\n    \"netIncomeFromDiscontinuedOperations\": \"<integer>\",\n    \"otherAdjustmentsToNetIncome\": \"<integer>\",\n    \"netIncome\": \"<integer>\",\n    \"netIncomeDeductions\": \"<integer>\",\n    \"bottomLineNetIncome\": \"<integer>\",\n    \"eps\": \"<number>\",\n    \"epsDiluted\": \"<number>\",\n    \"weightedAverageShsOut\": \"<integer>\",\n    \"weightedAverageShsOutDil\": \"<integer>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:38:50.000Z",
+              "updatedAt": "2026-07-28T01:38:50.000Z",
+              "uid": "35240-c5b122b2-3eb0-4790-8c63-c9a72f2d61fc"
+            },
+            {
+              "id": "a28ea54a-0d25-45b8-aa4f-03d0b4c81dde",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/income-statement?symbol=<string>&limit=<number>&period=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "income-statement"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Error Message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:38:50.000Z",
+              "updatedAt": "2026-07-28T01:38:50.000Z",
+              "uid": "35240-a28ea54a-0d25-45b8-aa4f-03d0b4c81dde"
+            }
+          ],
+          "createdAt": "2026-07-28T01:38:50.000Z",
+          "updatedAt": "2026-07-28T01:38:50.000Z",
+          "uid": "35240-8a006b6d-0055-46b0-94ed-082401b19a1c"
+        }
+      ],
+      "id": "276f8d56-3990-4c82-8b95-af2d464b3426",
+      "createdAt": "2026-07-28T01:38:50.000Z",
+      "updatedAt": "2026-07-28T01:38:50.000Z",
+      "uid": "35240-276f8d56-3990-4c82-8b95-af2d464b3426"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}

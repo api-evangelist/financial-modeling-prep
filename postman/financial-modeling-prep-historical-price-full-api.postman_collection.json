@@ -1,0 +1,221 @@
+{
+  "info": {
+    "_postman_id": "56c3ffa4-e289-4207-86e7-b01ebe50d3e1",
+    "name": "Financial Modeling Prep Historical Price Full API",
+    "description": "Financial Modeling Prep (FMP) Historical Price Full API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:38:47.000Z",
+    "updatedAt": "2026-07-28T01:38:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-56c3ffa4-e289-4207-86e7-b01ebe50d3e1"
+  },
+  "item": [
+    {
+      "name": "historical-price-eod",
+      "item": [
+        {
+          "name": "full",
+          "item": [
+            {
+              "name": "Get full historical end-of-day prices for a symbol",
+              "id": "590ba918-1dfe-45ae-8cd8-6901e588a8d3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/historical-price-eod/full?symbol=<string>&from=<date>&to=<date>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "historical-price-eod",
+                    "full"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<date>"
+                    }
+                  ]
+                },
+                "description": "Get full historical end-of-day prices for a symbol. Documented at https://site.financialmodelingprep.com/developer/docs."
+              },
+              "response": [
+                {
+                  "id": "60d501b6-5768-4e5c-b39e-acb72bf780e8",
+                  "name": "Historical Price Full data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/historical-price-eod/full?symbol=<string>&from=<date>&to=<date>&apikey=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "historical-price-eod",
+                        "full"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "symbol",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "from",
+                          "value": "<date>"
+                        },
+                        {
+                          "key": "to",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "Added as a part of security scheme: apikey",
+                          "key": "apikey",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"symbol\": \"<string>\",\n    \"date\": \"<string>\",\n    \"open\": \"<number>\",\n    \"high\": \"<number>\",\n    \"low\": \"<number>\",\n    \"close\": \"<number>\",\n    \"volume\": \"<integer>\",\n    \"change\": \"<number>\",\n    \"changePercent\": \"<number>\",\n    \"vwap\": \"<number>\"\n  },\n  {\n    \"symbol\": \"<string>\",\n    \"date\": \"<string>\",\n    \"open\": \"<number>\",\n    \"high\": \"<number>\",\n    \"low\": \"<number>\",\n    \"close\": \"<number>\",\n    \"volume\": \"<integer>\",\n    \"change\": \"<number>\",\n    \"changePercent\": \"<number>\",\n    \"vwap\": \"<number>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:38:48.000Z",
+                  "updatedAt": "2026-07-28T01:38:48.000Z",
+                  "uid": "35240-60d501b6-5768-4e5c-b39e-acb72bf780e8"
+                },
+                {
+                  "id": "ed1f944d-c9e5-403c-8f0c-1a05bfaebac6",
+                  "name": "Invalid or missing API key",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/historical-price-eod/full?symbol=<string>&from=<date>&to=<date>&apikey=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "historical-price-eod",
+                        "full"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "symbol",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "from",
+                          "value": "<date>"
+                        },
+                        {
+                          "key": "to",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "Added as a part of security scheme: apikey",
+                          "key": "apikey",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Error Message\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:38:48.000Z",
+                  "updatedAt": "2026-07-28T01:38:48.000Z",
+                  "uid": "35240-ed1f944d-c9e5-403c-8f0c-1a05bfaebac6"
+                }
+              ],
+              "createdAt": "2026-07-28T01:38:48.000Z",
+              "updatedAt": "2026-07-28T01:38:48.000Z",
+              "uid": "35240-590ba918-1dfe-45ae-8cd8-6901e588a8d3"
+            }
+          ],
+          "id": "1acca140-a96b-4a56-8882-e856fe9cf9b3",
+          "createdAt": "2026-07-28T01:38:48.000Z",
+          "updatedAt": "2026-07-28T01:38:48.000Z",
+          "uid": "35240-1acca140-a96b-4a56-8882-e856fe9cf9b3"
+        }
+      ],
+      "id": "80f3aa28-b260-4e37-8002-de980a0b770a",
+      "createdAt": "2026-07-28T01:38:48.000Z",
+      "updatedAt": "2026-07-28T01:38:48.000Z",
+      "uid": "35240-80f3aa28-b260-4e37-8002-de980a0b770a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}

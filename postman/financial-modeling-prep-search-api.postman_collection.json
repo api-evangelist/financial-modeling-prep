@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "417cdd58-f83a-49b9-bc2e-b3056ff0d1e5",
+    "name": "Financial Modeling Prep Search API",
+    "description": "Financial Modeling Prep (FMP) Search API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:38:58.000Z",
+    "updatedAt": "2026-07-28T01:38:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-417cdd58-f83a-49b9-bc2e-b3056ff0d1e5"
+  },
+  "item": [
+    {
+      "name": "search-symbol",
+      "item": [
+        {
+          "name": "Search stock ticker symbols by company name or symbol",
+          "id": "456ade9f-91bc-4476-ad0b-6bd65857fa15",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/search-symbol?query=<string>&limit=<number>&exchange=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "search-symbol"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "key": "exchange",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Search stock ticker symbols by company name or symbol. Documented at https://site.financialmodelingprep.com/developer/docs."
+          },
+          "response": [
+            {
+              "id": "c5a298e7-811d-407a-9d31-66b11fab37df",
+              "name": "Search data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/search-symbol?query=<string>&limit=<number>&exchange=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "search-symbol"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "exchange",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"symbol\": \"<string>\",\n    \"name\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"exchangeFullName\": \"<string>\",\n    \"exchange\": \"<string>\"\n  },\n  {\n    \"symbol\": \"<string>\",\n    \"name\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"exchangeFullName\": \"<string>\",\n    \"exchange\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:38:59.000Z",
+              "updatedAt": "2026-07-28T01:38:59.000Z",
+              "uid": "35240-c5a298e7-811d-407a-9d31-66b11fab37df"
+            },
+            {
+              "id": "cf4fb54e-4f9f-4e56-bc49-2a31a16c7e2b",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/search-symbol?query=<string>&limit=<number>&exchange=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "search-symbol"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "exchange",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Error Message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:38:59.000Z",
+              "updatedAt": "2026-07-28T01:38:59.000Z",
+              "uid": "35240-cf4fb54e-4f9f-4e56-bc49-2a31a16c7e2b"
+            }
+          ],
+          "createdAt": "2026-07-28T01:38:59.000Z",
+          "updatedAt": "2026-07-28T01:38:59.000Z",
+          "uid": "35240-456ade9f-91bc-4476-ad0b-6bd65857fa15"
+        }
+      ],
+      "id": "979746c9-f1f0-4240-bd9b-e41e0e1131d6",
+      "createdAt": "2026-07-28T01:38:59.000Z",
+      "updatedAt": "2026-07-28T01:38:59.000Z",
+      "uid": "35240-979746c9-f1f0-4240-bd9b-e41e0e1131d6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}

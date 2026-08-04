@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "3f685bad-cc20-4098-be7d-7772f6651ad8",
+    "name": "Financial Modeling Prep Balance Sheet Statement API",
+    "description": "Financial Modeling Prep (FMP) Balance Sheet Statement API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:38:19.000Z",
+    "updatedAt": "2026-07-28T01:38:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3f685bad-cc20-4098-be7d-7772f6651ad8"
+  },
+  "item": [
+    {
+      "name": "balance-sheet-statement",
+      "item": [
+        {
+          "name": "Get balance sheet statements for a company",
+          "id": "b7ab2ea0-648f-4f42-81fc-94fdd89ad014",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/balance-sheet-statement?symbol=<string>&limit=<number>&period=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "balance-sheet-statement"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "symbol",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Get balance sheet statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs."
+          },
+          "response": [
+            {
+              "id": "04201967-9664-4a21-8065-9279f5469fe2",
+              "name": "Balance Sheet Statement data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/balance-sheet-statement?symbol=<string>&limit=<number>&period=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "balance-sheet-statement"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"date\": \"<string>\",\n    \"symbol\": \"<string>\",\n    \"reportedCurrency\": \"<string>\",\n    \"cik\": \"<string>\",\n    \"filingDate\": \"<string>\",\n    \"acceptedDate\": \"<string>\",\n    \"fiscalYear\": \"<string>\",\n    \"period\": \"<string>\",\n    \"cashAndCashEquivalents\": \"<integer>\",\n    \"shortTermInvestments\": \"<integer>\",\n    \"cashAndShortTermInvestments\": \"<integer>\",\n    \"netReceivables\": \"<integer>\",\n    \"accountsReceivables\": \"<integer>\",\n    \"otherReceivables\": \"<integer>\",\n    \"inventory\": \"<integer>\",\n    \"prepaids\": \"<integer>\",\n    \"otherCurrentAssets\": \"<integer>\",\n    \"totalCurrentAssets\": \"<integer>\",\n    \"propertyPlantEquipmentNet\": \"<integer>\",\n    \"goodwill\": \"<integer>\",\n    \"intangibleAssets\": \"<integer>\",\n    \"goodwillAndIntangibleAssets\": \"<integer>\",\n    \"longTermInvestments\": \"<integer>\",\n    \"taxAssets\": \"<integer>\",\n    \"otherNonCurrentAssets\": \"<integer>\",\n    \"totalNonCurrentAssets\": \"<integer>\",\n    \"otherAssets\": \"<integer>\",\n    \"totalAssets\": \"<integer>\",\n    \"totalPayables\": \"<integer>\",\n    \"accountPayables\": \"<integer>\",\n    \"otherPayables\": \"<integer>\",\n    \"accruedExpenses\": \"<integer>\",\n    \"shortTermDebt\": \"<integer>\",\n    \"capitalLeaseObligationsCurrent\": \"<integer>\",\n    \"taxPayables\": \"<integer>\",\n    \"deferredRevenue\": \"<integer>\",\n    \"otherCurrentLiabilities\": \"<integer>\",\n    \"totalCurrentLiabilities\": \"<integer>\",\n    \"longTermDebt\": \"<integer>\",\n    \"deferredRevenueNonCurrent\": \"<integer>\",\n    \"deferredTaxLiabilitiesNonCurrent\": \"<integer>\",\n    \"otherNonCurrentLiabilities\": \"<integer>\",\n    \"totalNonCurrentLiabilities\": \"<integer>\",\n    \"otherLiabilities\": \"<integer>\",\n    \"capitalLeaseObligations\": \"<integer>\",\n    \"totalLiabilities\": \"<integer>\",\n    \"treasuryStock\": \"<integer>\",\n    \"preferredStock\": \"<integer>\",\n    \"commonStock\": \"<integer>\",\n    \"retainedEarnings\": \"<integer>\",\n    \"additionalPaidInCapital\": \"<integer>\",\n    \"accumulatedOtherComprehensiveIncomeLoss\": \"<integer>\",\n    \"otherTotalStockholdersEquity\": \"<integer>\",\n    \"totalStockholdersEquity\": \"<integer>\",\n    \"totalEquity\": \"<integer>\",\n    \"minorityInterest\": \"<integer>\",\n    \"totalLiabilitiesAndTotalEquity\": \"<integer>\",\n    \"totalInvestments\": \"<integer>\",\n    \"totalDebt\": \"<integer>\",\n    \"netDebt\": \"<integer>\"\n  },\n  {\n    \"date\": \"<string>\",\n    \"symbol\": \"<string>\",\n    \"reportedCurrency\": \"<string>\",\n    \"cik\": \"<string>\",\n    \"filingDate\": \"<string>\",\n    \"acceptedDate\": \"<string>\",\n    \"fiscalYear\": \"<string>\",\n    \"period\": \"<string>\",\n    \"cashAndCashEquivalents\": \"<integer>\",\n    \"shortTermInvestments\": \"<integer>\",\n    \"cashAndShortTermInvestments\": \"<integer>\",\n    \"netReceivables\": \"<integer>\",\n    \"accountsReceivables\": \"<integer>\",\n    \"otherReceivables\": \"<integer>\",\n    \"inventory\": \"<integer>\",\n    \"prepaids\": \"<integer>\",\n    \"otherCurrentAssets\": \"<integer>\",\n    \"totalCurrentAssets\": \"<integer>\",\n    \"propertyPlantEquipmentNet\": \"<integer>\",\n    \"goodwill\": \"<integer>\",\n    \"intangibleAssets\": \"<integer>\",\n    \"goodwillAndIntangibleAssets\": \"<integer>\",\n    \"longTermInvestments\": \"<integer>\",\n    \"taxAssets\": \"<integer>\",\n    \"otherNonCurrentAssets\": \"<integer>\",\n    \"totalNonCurrentAssets\": \"<integer>\",\n    \"otherAssets\": \"<integer>\",\n    \"totalAssets\": \"<integer>\",\n    \"totalPayables\": \"<integer>\",\n    \"accountPayables\": \"<integer>\",\n    \"otherPayables\": \"<integer>\",\n    \"accruedExpenses\": \"<integer>\",\n    \"shortTermDebt\": \"<integer>\",\n    \"capitalLeaseObligationsCurrent\": \"<integer>\",\n    \"taxPayables\": \"<integer>\",\n    \"deferredRevenue\": \"<integer>\",\n    \"otherCurrentLiabilities\": \"<integer>\",\n    \"totalCurrentLiabilities\": \"<integer>\",\n    \"longTermDebt\": \"<integer>\",\n    \"deferredRevenueNonCurrent\": \"<integer>\",\n    \"deferredTaxLiabilitiesNonCurrent\": \"<integer>\",\n    \"otherNonCurrentLiabilities\": \"<integer>\",\n    \"totalNonCurrentLiabilities\": \"<integer>\",\n    \"otherLiabilities\": \"<integer>\",\n    \"capitalLeaseObligations\": \"<integer>\",\n    \"totalLiabilities\": \"<integer>\",\n    \"treasuryStock\": \"<integer>\",\n    \"preferredStock\": \"<integer>\",\n    \"commonStock\": \"<integer>\",\n    \"retainedEarnings\": \"<integer>\",\n    \"additionalPaidInCapital\": \"<integer>\",\n    \"accumulatedOtherComprehensiveIncomeLoss\": \"<integer>\",\n    \"otherTotalStockholdersEquity\": \"<integer>\",\n    \"totalStockholdersEquity\": \"<integer>\",\n    \"totalEquity\": \"<integer>\",\n    \"minorityInterest\": \"<integer>\",\n    \"totalLiabilitiesAndTotalEquity\": \"<integer>\",\n    \"totalInvestments\": \"<integer>\",\n    \"totalDebt\": \"<integer>\",\n    \"netDebt\": \"<integer>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:38:20.000Z",
+              "updatedAt": "2026-07-28T01:38:20.000Z",
+              "uid": "35240-04201967-9664-4a21-8065-9279f5469fe2"
+            },
+            {
+              "id": "5e9db773-6117-417b-98fe-afd67e7a4167",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/balance-sheet-statement?symbol=<string>&limit=<number>&period=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "balance-sheet-statement"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Error Message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:38:20.000Z",
+              "updatedAt": "2026-07-28T01:38:20.000Z",
+              "uid": "35240-5e9db773-6117-417b-98fe-afd67e7a4167"
+            }
+          ],
+          "createdAt": "2026-07-28T01:38:20.000Z",
+          "updatedAt": "2026-07-28T01:38:20.000Z",
+          "uid": "35240-b7ab2ea0-648f-4f42-81fc-94fdd89ad014"
+        }
+      ],
+      "id": "80744a9e-776a-44f9-8d87-9e897a07119f",
+      "createdAt": "2026-07-28T01:38:20.000Z",
+      "updatedAt": "2026-07-28T01:38:20.000Z",
+      "uid": "35240-80744a9e-776a-44f9-8d87-9e897a07119f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}

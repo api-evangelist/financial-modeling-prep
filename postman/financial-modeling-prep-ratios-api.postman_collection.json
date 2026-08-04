@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "b000ae6b-d2b0-46a4-af7c-ae4bc411a4ad",
+    "name": "Financial Modeling Prep Ratios API",
+    "description": "Financial Modeling Prep (FMP) Ratios API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:38:57.000Z",
+    "updatedAt": "2026-07-28T01:38:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b000ae6b-d2b0-46a4-af7c-ae4bc411a4ad"
+  },
+  "item": [
+    {
+      "name": "ratios",
+      "item": [
+        {
+          "name": "Get financial ratios for a company",
+          "id": "97eac761-4d23-41e1-8f8f-b5f3b8eb87f2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ratios?symbol=<string>&limit=<number>&period=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratios"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "symbol",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Get financial ratios for a company. Documented at https://site.financialmodelingprep.com/developer/docs."
+          },
+          "response": [
+            {
+              "id": "dd343a4d-ac7b-40fd-b900-5d9e7410475d",
+              "name": "Ratios data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ratios?symbol=<string>&limit=<number>&period=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ratios"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"symbol\": \"<string>\",\n    \"date\": \"<string>\",\n    \"fiscalYear\": \"<string>\",\n    \"period\": \"<string>\",\n    \"reportedCurrency\": \"<string>\",\n    \"grossProfitMargin\": \"<number>\",\n    \"ebitMargin\": \"<number>\",\n    \"ebitdaMargin\": \"<number>\",\n    \"operatingProfitMargin\": \"<number>\",\n    \"pretaxProfitMargin\": \"<number>\",\n    \"continuousOperationsProfitMargin\": \"<number>\",\n    \"netProfitMargin\": \"<number>\",\n    \"bottomLineProfitMargin\": \"<number>\",\n    \"receivablesTurnover\": \"<number>\",\n    \"payablesTurnover\": \"<number>\",\n    \"inventoryTurnover\": \"<number>\",\n    \"fixedAssetTurnover\": \"<number>\",\n    \"assetTurnover\": \"<number>\",\n    \"currentRatio\": \"<number>\",\n    \"quickRatio\": \"<number>\",\n    \"solvencyRatio\": \"<number>\",\n    \"cashRatio\": \"<number>\",\n    \"priceToEarningsRatio\": \"<number>\",\n    \"priceToEarningsGrowthRatio\": \"<number>\",\n    \"forwardPriceToEarningsGrowthRatio\": \"<number>\",\n    \"priceToBookRatio\": \"<number>\",\n    \"priceToSalesRatio\": \"<number>\",\n    \"priceToFreeCashFlowRatio\": \"<number>\",\n    \"priceToOperatingCashFlowRatio\": \"<number>\",\n    \"debtToAssetsRatio\": \"<number>\",\n    \"debtToEquityRatio\": \"<number>\",\n    \"debtToCapitalRatio\": \"<number>\",\n    \"longTermDebtToCapitalRatio\": \"<number>\",\n    \"financialLeverageRatio\": \"<number>\",\n    \"workingCapitalTurnoverRatio\": \"<number>\",\n    \"operatingCashFlowRatio\": \"<number>\",\n    \"operatingCashFlowSalesRatio\": \"<number>\",\n    \"freeCashFlowOperatingCashFlowRatio\": \"<number>\",\n    \"debtServiceCoverageRatio\": \"<number>\",\n    \"interestCoverageRatio\": \"<integer>\",\n    \"shortTermOperatingCashFlowCoverageRatio\": \"<number>\",\n    \"operatingCashFlowCoverageRatio\": \"<number>\",\n    \"capitalExpenditureCoverageRatio\": \"<number>\",\n    \"dividendPaidAndCapexCoverageRatio\": \"<number>\",\n    \"dividendPayoutRatio\": \"<number>\",\n    \"dividendYield\": \"<number>\",\n    \"dividendYieldPercentage\": \"<number>\",\n    \"revenuePerShare\": \"<number>\",\n    \"netIncomePerShare\": \"<number>\",\n    \"interestDebtPerShare\": \"<number>\",\n    \"cashPerShare\": \"<number>\",\n    \"bookValuePerShare\": \"<number>\",\n    \"tangibleBookValuePerShare\": \"<number>\",\n    \"shareholdersEquityPerShare\": \"<number>\",\n    \"operatingCashFlowPerShare\": \"<number>\",\n    \"capexPerShare\": \"<number>\",\n    \"freeCashFlowPerShare\": \"<number>\",\n    \"netIncomePerEBT\": \"<number>\",\n    \"ebtPerEbit\": \"<number>\",\n    \"priceToFairValue\": \"<number>\",\n    \"debtToMarketCap\": \"<number>\",\n    \"effectiveTaxRate\": \"<number>\",\n    \"enterpriseValueMultiple\": \"<number>\"\n  },\n  {\n    \"symbol\": \"<string>\",\n    \"date\": \"<string>\",\n    \"fiscalYear\": \"<string>\",\n    \"period\": \"<string>\",\n    \"reportedCurrency\": \"<string>\",\n    \"grossProfitMargin\": \"<number>\",\n    \"ebitMargin\": \"<number>\",\n    \"ebitdaMargin\": \"<number>\",\n    \"operatingProfitMargin\": \"<number>\",\n    \"pretaxProfitMargin\": \"<number>\",\n    \"continuousOperationsProfitMargin\": \"<number>\",\n    \"netProfitMargin\": \"<number>\",\n    \"bottomLineProfitMargin\": \"<number>\",\n    \"receivablesTurnover\": \"<number>\",\n    \"payablesTurnover\": \"<number>\",\n    \"inventoryTurnover\": \"<number>\",\n    \"fixedAssetTurnover\": \"<number>\",\n    \"assetTurnover\": \"<number>\",\n    \"currentRatio\": \"<number>\",\n    \"quickRatio\": \"<number>\",\n    \"solvencyRatio\": \"<number>\",\n    \"cashRatio\": \"<number>\",\n    \"priceToEarningsRatio\": \"<number>\",\n    \"priceToEarningsGrowthRatio\": \"<number>\",\n    \"forwardPriceToEarningsGrowthRatio\": \"<number>\",\n    \"priceToBookRatio\": \"<number>\",\n    \"priceToSalesRatio\": \"<number>\",\n    \"priceToFreeCashFlowRatio\": \"<number>\",\n    \"priceToOperatingCashFlowRatio\": \"<number>\",\n    \"debtToAssetsRatio\": \"<number>\",\n    \"debtToEquityRatio\": \"<number>\",\n    \"debtToCapitalRatio\": \"<number>\",\n    \"longTermDebtToCapitalRatio\": \"<number>\",\n    \"financialLeverageRatio\": \"<number>\",\n    \"workingCapitalTurnoverRatio\": \"<number>\",\n    \"operatingCashFlowRatio\": \"<number>\",\n    \"operatingCashFlowSalesRatio\": \"<number>\",\n    \"freeCashFlowOperatingCashFlowRatio\": \"<number>\",\n    \"debtServiceCoverageRatio\": \"<number>\",\n    \"interestCoverageRatio\": \"<integer>\",\n    \"shortTermOperatingCashFlowCoverageRatio\": \"<number>\",\n    \"operatingCashFlowCoverageRatio\": \"<number>\",\n    \"capitalExpenditureCoverageRatio\": \"<number>\",\n    \"dividendPaidAndCapexCoverageRatio\": \"<number>\",\n    \"dividendPayoutRatio\": \"<number>\",\n    \"dividendYield\": \"<number>\",\n    \"dividendYieldPercentage\": \"<number>\",\n    \"revenuePerShare\": \"<number>\",\n    \"netIncomePerShare\": \"<number>\",\n    \"interestDebtPerShare\": \"<number>\",\n    \"cashPerShare\": \"<number>\",\n    \"bookValuePerShare\": \"<number>\",\n    \"tangibleBookValuePerShare\": \"<number>\",\n    \"shareholdersEquityPerShare\": \"<number>\",\n    \"operatingCashFlowPerShare\": \"<number>\",\n    \"capexPerShare\": \"<number>\",\n    \"freeCashFlowPerShare\": \"<number>\",\n    \"netIncomePerEBT\": \"<number>\",\n    \"ebtPerEbit\": \"<number>\",\n    \"priceToFairValue\": \"<number>\",\n    \"debtToMarketCap\": \"<number>\",\n    \"effectiveTaxRate\": \"<number>\",\n    \"enterpriseValueMultiple\": \"<number>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:38:57.000Z",
+              "updatedAt": "2026-07-28T01:38:57.000Z",
+              "uid": "35240-dd343a4d-ac7b-40fd-b900-5d9e7410475d"
+            },
+            {
+              "id": "d855b533-df7d-4558-8a57-fffb0a501b72",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ratios?symbol=<string>&limit=<number>&period=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ratios"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Error Message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:38:57.000Z",
+              "updatedAt": "2026-07-28T01:38:57.000Z",
+              "uid": "35240-d855b533-df7d-4558-8a57-fffb0a501b72"
+            }
+          ],
+          "createdAt": "2026-07-28T01:38:57.000Z",
+          "updatedAt": "2026-07-28T01:38:57.000Z",
+          "uid": "35240-97eac761-4d23-41e1-8f8f-b5f3b8eb87f2"
+        }
+      ],
+      "id": "f508136f-0341-4a25-92ed-1bc9b66e687d",
+      "createdAt": "2026-07-28T01:38:57.000Z",
+      "updatedAt": "2026-07-28T01:38:57.000Z",
+      "uid": "35240-f508136f-0341-4a25-92ed-1bc9b66e687d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}

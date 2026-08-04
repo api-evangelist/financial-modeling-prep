@@ -1,0 +1,185 @@
+{
+  "info": {
+    "_postman_id": "22c238ae-5b99-4fde-bfca-e8eaea5af9e3",
+    "name": "Financial Modeling Prep Quote API",
+    "description": "Financial Modeling Prep (FMP) Quote API \u2014 part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:38:55.000Z",
+    "updatedAt": "2026-07-28T01:38:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-22c238ae-5b99-4fde-bfca-e8eaea5af9e3"
+  },
+  "item": [
+    {
+      "name": "quote",
+      "item": [
+        {
+          "name": "Get real-time stock quote",
+          "id": "50899850-a241-46c9-8070-e25f3d09a03f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/quote?symbol=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "quote"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "symbol",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Get real-time stock quote. Documented at https://site.financialmodelingprep.com/developer/docs."
+          },
+          "response": [
+            {
+              "id": "b8ddc6c9-1827-41a5-a825-9809bc5b2d3b",
+              "name": "Quote data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/quote?symbol=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "quote"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"symbol\": \"<string>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"changePercentage\": \"<number>\",\n    \"change\": \"<number>\",\n    \"volume\": \"<integer>\",\n    \"dayLow\": \"<number>\",\n    \"dayHigh\": \"<number>\",\n    \"yearHigh\": \"<number>\",\n    \"yearLow\": \"<number>\",\n    \"marketCap\": \"<integer>\",\n    \"priceAvg50\": \"<number>\",\n    \"priceAvg200\": \"<number>\",\n    \"exchange\": \"<string>\",\n    \"open\": \"<number>\",\n    \"previousClose\": \"<number>\",\n    \"timestamp\": \"<integer>\"\n  },\n  {\n    \"symbol\": \"<string>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"changePercentage\": \"<number>\",\n    \"change\": \"<number>\",\n    \"volume\": \"<integer>\",\n    \"dayLow\": \"<number>\",\n    \"dayHigh\": \"<number>\",\n    \"yearHigh\": \"<number>\",\n    \"yearLow\": \"<number>\",\n    \"marketCap\": \"<integer>\",\n    \"priceAvg50\": \"<number>\",\n    \"priceAvg200\": \"<number>\",\n    \"exchange\": \"<string>\",\n    \"open\": \"<number>\",\n    \"previousClose\": \"<number>\",\n    \"timestamp\": \"<integer>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:38:56.000Z",
+              "updatedAt": "2026-07-28T01:38:56.000Z",
+              "uid": "35240-b8ddc6c9-1827-41a5-a825-9809bc5b2d3b"
+            },
+            {
+              "id": "083680f1-4dfd-4cf3-aeca-b93e81372f61",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/quote?symbol=<string>&apikey=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "quote"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Error Message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:38:56.000Z",
+              "updatedAt": "2026-07-28T01:38:56.000Z",
+              "uid": "35240-083680f1-4dfd-4cf3-aeca-b93e81372f61"
+            }
+          ],
+          "createdAt": "2026-07-28T01:38:56.000Z",
+          "updatedAt": "2026-07-28T01:38:56.000Z",
+          "uid": "35240-50899850-a241-46c9-8070-e25f3d09a03f"
+        }
+      ],
+      "id": "0c9b800e-aa40-4110-b450-c92e9f8aaf63",
+      "createdAt": "2026-07-28T01:38:56.000Z",
+      "updatedAt": "2026-07-28T01:38:56.000Z",
+      "uid": "35240-0c9b800e-aa40-4110-b450-c92e9f8aaf63"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://financialmodelingprep.com/stable"
+    }
+  ]
+}
