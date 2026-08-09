@@ -1,0 +1,229 @@
+asyncapi: '2.6.0'
+id: 'urn:com:financialmodelingprep:websockets'
+info:
+  title: Financial Modeling Prep Real-Time WebSocket API
+  version: '1.0.0'
+  description: |
+    AsyncAPI 2.6 description of Financial Modeling Prep's real-time market data
+    WebSocket surface, documented at
+    https://site.financialmodelingprep.com/datasets/websocket and
+    https://site.financialmodelingprep.com/developer/docs/websocket-api.
+
+    FMP publishes genuine WebSocket endpoints (wss://) that stream real-time
+    quotes and trades for stocks, crypto, and forex. A client opens a WebSocket
+    connection, sends a `login` event carrying its API key, then sends
+    `subscribe` events naming one or more tickers. The server then pushes
+    quote and trade messages for those tickers as they occur. This is a
+    bidirectional WebSocket transport, not HTTP Server-Sent Events.
+
+    Each asset class has its own endpoint host:
+      - Stocks:  wss://websockets.financialmodelingprep.com
+      - Crypto:  wss://crypto.financialmodelingprep.com
+      - Forex:   wss://forex.financialmodelingprep.com
+  contact:
+    name: API Evangelist
+    email: kin@apievangelist.com
+    url: https://apievangelist.com
+  license:
+    name: API documentation - Financial Modeling Prep Terms of Service
+    url: https://site.financialmodelingprep.com/terms-of-service
+  x-transport-notes:
+    transport: WebSocket
+    protocol: wss
+    direction: bidirectional
+    auth: 'login event carrying { "event": "login", "data": { "apiKey": "<API_KEY>" } }'
+    isWebSocket: true
+    source: https://site.financialmodelingprep.com/datasets/websocket
+defaultContentType: application/json
+servers:
+  stocks:
+    url: websockets.financialmodelingprep.com
+    protocol: wss
+    description: Real-time stock quote and trade stream.
+  crypto:
+    url: crypto.financialmodelingprep.com
+    protocol: wss
+    description: Real-time crypto quote and trade stream.
+  forex:
+    url: forex.financialmodelingprep.com
+    protocol: wss
+    description: Real-time forex quote and trade stream.
+channels:
+  /:
+    description: |
+      The single WebSocket channel for a given asset-class host. After the
+      connection is established the client publishes `login` and `subscribe`
+      (and optionally `unsubscribe`) control events, and the server publishes
+      a continuous stream of quote / trade messages for the subscribed tickers.
+    publish:
+      operationId: sendClientEvent
+      summary: Client-sent control events (login, subscribe, unsubscribe).
+      description: |
+        Events the client sends up the socket. A `login` event must be sent
+        first to authenticate the connection with the account's API key. After
+        a successful login, `subscribe` events register interest in one or more
+        tickers; `unsubscribe` events remove them.
+      message:
+        oneOf:
+          - $ref: '#/components/messages/LoginEvent'
+          - $ref: '#/components/messages/SubscribeEvent'
+          - $ref: '#/components/messages/UnsubscribeEvent'
+    subscribe:
+      operationId: receiveMarketMessage
+      summary: Server-pushed real-time market data messages.
+      description: |
+        Messages the server pushes to the client for subscribed tickers. Each
+        message carries a `s` (ticker symbol), a `t` (timestamp), and a type
+        indicator: `T` for a last-trade message, `Q` for a top-of-book quote
+        update, and `B` for a trade-break message.
+      message:
+        $ref: '#/components/messages/MarketMessage'
+components:
+  messages:
+    LoginEvent:
+      name: LoginEvent
+      title: Login event
+      summary: Authenticates the WebSocket connection with the account API key.
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - event
+          - data
+        properties:
+          event:
+            type: string
+            enum:
+              - login
+          data:
+            type: object
+            required:
+              - apiKey
+            properties:
+              apiKey:
+                type: string
+                description: The account's FMP API key.
+      examples:
+        - name: login
+          payload:
+            event: login
+            data:
+              apiKey: YOUR_API_KEY
+    SubscribeEvent:
+      name: SubscribeEvent
+      title: Subscribe event
+      summary: Subscribes the connection to one or more tickers.
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - event
+          - data
+        properties:
+          event:
+            type: string
+            enum:
+              - subscribe
+          data:
+            type: object
+            required:
+              - ticker
+            properties:
+              ticker:
+                type: array
+                items:
+                  type: string
+                description: Lowercase ticker symbols, e.g. ["aapl","msft"] or ["btcusd"] or ["eurusd"].
+      examples:
+        - name: subscribeStocks
+          payload:
+            event: subscribe
+            data:
+              ticker:
+                - aapl
+                - msft
+    UnsubscribeEvent:
+      name: UnsubscribeEvent
+      title: Unsubscribe event
+      summary: Unsubscribes the connection from one or more tickers.
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - event
+          - data
+        properties:
+          event:
+            type: string
+            enum:
+              - unsubscribe
+          data:
+            type: object
+            required:
+              - ticker
+            properties:
+              ticker:
+                type: array
+                items:
+                  type: string
+      examples:
+        - name: unsubscribeStocks
+          payload:
+            event: unsubscribe
+            data:
+              ticker:
+                - aapl
+    MarketMessage:
+      name: MarketMessage
+      title: Real-time market data message
+      summary: A trade, quote, or trade-break message for a subscribed ticker.
+      contentType: application/json
+      description: |
+        Field `type` (carried as `type`) is one of `T` (last trade), `Q`
+        (top-of-book quote), or `B` (trade break). `s` is the ticker, `t` is
+        the event timestamp. Price and size fields (`ap`, `as`, `bp`, `bs`,
+        `lp`, `ls`) are present according to message type.
+      payload:
+        type: object
+        properties:
+          s:
+            type: string
+            description: Ticker symbol the message relates to.
+          t:
+            type: integer
+            description: Event timestamp.
+          type:
+            type: string
+            enum:
+              - T
+              - Q
+              - B
+            description: Message type - T last trade, Q top-of-book quote, B trade break.
+          ap:
+            type: number
+            description: Ask price (quote messages).
+          as:
+            type: number
+            description: Ask size (quote messages).
+          bp:
+            type: number
+            description: Bid price (quote messages).
+          bs:
+            type: number
+            description: Bid size (quote messages).
+          lp:
+            type: number
+            description: Last trade price (trade messages).
+          ls:
+            type: number
+            description: Last trade size (trade messages).
+      examples:
+        - name: quoteUpdate
+          payload:
+            s: aapl
+            t: 1748524800000
+            type: Q
+            ap: 195.12
+            as: 100
+            bp: 195.1
+            bs: 200

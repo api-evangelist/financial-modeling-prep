@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: Financial Modeling Prep Analyst Estimates Quotes and Prices API
+  description: Financial Modeling Prep (FMP) provides real-time and historical financial data through more than 100 REST endpoints served from the stable base https://financialmodelingprep.com/stable. Coverage includes company financial statements (income statement, balance sheet, cash flow), real-time and historical quotes for stocks, forex, crypto, and commodities, SEC filings, analyst estimates, company fundamentals (profile, key metrics, ratios), and macroeconomic indicators. All requests are authenticated with an API key passed as the `apikey` query parameter. Responses default to JSON and most endpoints also support CSV via the `datatype` parameter. This document models a representative subset of the stable endpoints; see the FMP developer docs for the full catalog. FMP also exposes a real-time WebSocket surface, modeled separately in asyncapi/financialmodelingprep-asyncapi.yml.
+  version: stable
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com
+  termsOfService: https://site.financialmodelingprep.com/terms-of-service
+servers:
+- url: https://financialmodelingprep.com/stable
+  description: FMP stable REST base
+- url: https://financialmodelingprep.com/api/v3
+  description: FMP legacy v3 REST base
+security:
+- apiKeyQuery: []
+tags:
+- name: Quotes and Prices
+  description: Real-time quotes and historical end-of-day prices.
+paths:
+  /quote:
+    get:
+      operationId: getQuote
+      tags:
+      - Quotes and Prices
+      summary: Full quote
+      description: Returns a real-time full quote for a stock, ETF, index, forex pair, crypto pair, or commodity, identified by symbol.
+      parameters:
+      - $ref: '#/components/parameters/symbol'
+      responses:
+        '200':
+          description: The current quote for the symbol.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /historical-price-eod/full:
+    get:
+      operationId: getHistoricalPriceEodFull
+      tags:
+      - Quotes and Prices
+      summary: Historical end-of-day prices
+      description: Returns historical daily (end-of-day) open/high/low/close and volume for a symbol, optionally bounded by a from/to date range. Up to 30 years of history is available.
+      parameters:
+      - $ref: '#/components/parameters/symbol'
+      - name: from
+        in: query
+        required: false
+        description: Start date (YYYY-MM-DD).
+        schema:
+          type: string
+          format: date
+      - name: to
+        in: query
+        required: false
+        description: End date (YYYY-MM-DD).
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Historical end-of-day price bars.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  parameters:
+    symbol:
+      name: symbol
+      in: query
+      required: true
+      description: Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols.
+      schema:
+        type: string
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+      description: FMP API key passed as the `apikey` query parameter on every request, e.g. ?apikey=YOUR_API_KEY. Obtain a key from the FMP dashboard.

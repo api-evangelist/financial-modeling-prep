@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: Financial Modeling Prep Analyst Estimates Financial Statements API
+  description: Financial Modeling Prep (FMP) provides real-time and historical financial data through more than 100 REST endpoints served from the stable base https://financialmodelingprep.com/stable. Coverage includes company financial statements (income statement, balance sheet, cash flow), real-time and historical quotes for stocks, forex, crypto, and commodities, SEC filings, analyst estimates, company fundamentals (profile, key metrics, ratios), and macroeconomic indicators. All requests are authenticated with an API key passed as the `apikey` query parameter. Responses default to JSON and most endpoints also support CSV via the `datatype` parameter. This document models a representative subset of the stable endpoints; see the FMP developer docs for the full catalog. FMP also exposes a real-time WebSocket surface, modeled separately in asyncapi/financialmodelingprep-asyncapi.yml.
+  version: stable
+  contact:
+    name: Financial Modeling Prep
+    url: https://site.financialmodelingprep.com
+  termsOfService: https://site.financialmodelingprep.com/terms-of-service
+servers:
+- url: https://financialmodelingprep.com/stable
+  description: FMP stable REST base
+- url: https://financialmodelingprep.com/api/v3
+  description: FMP legacy v3 REST base
+security:
+- apiKeyQuery: []
+tags:
+- name: Financial Statements
+  description: Income statement, balance sheet, and cash-flow statement data.
+paths:
+  /income-statement:
+    get:
+      operationId: getIncomeStatement
+      tags:
+      - Financial Statements
+      summary: Income statement
+      description: Returns annual or quarterly income statements for a company, identified by ticker symbol.
+      parameters:
+      - $ref: '#/components/parameters/symbol'
+      - $ref: '#/components/parameters/period'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A list of income statement periods.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /balance-sheet-statement:
+    get:
+      operationId: getBalanceSheetStatement
+      tags:
+      - Financial Statements
+      summary: Balance sheet statement
+      description: Returns annual or quarterly balance sheet statements for a company, identified by ticker symbol.
+      parameters:
+      - $ref: '#/components/parameters/symbol'
+      - $ref: '#/components/parameters/period'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A list of balance sheet periods.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /cash-flow-statement:
+    get:
+      operationId: getCashFlowStatement
+      tags:
+      - Financial Statements
+      summary: Cash flow statement
+      description: Returns annual or quarterly cash-flow statements for a company, identified by ticker symbol.
+      parameters:
+      - $ref: '#/components/parameters/symbol'
+      - $ref: '#/components/parameters/period'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A list of cash-flow statement periods.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  parameters:
+    period:
+      name: period
+      in: query
+      required: false
+      description: Reporting period.
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarter
+        default: annual
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+        default: 100
+    symbol:
+      name: symbol
+      in: query
+      required: true
+      description: Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols.
+      schema:
+        type: string
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: apikey
+      description: FMP API key passed as the `apikey` query parameter on every request, e.g. ?apikey=YOUR_API_KEY. Obtain a key from the FMP dashboard.

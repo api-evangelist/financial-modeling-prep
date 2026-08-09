@@ -1,0 +1,286 @@
+{
+  "info": {
+    "name": "Financial Modeling Prep API",
+    "description": "Representative subset of the Financial Modeling Prep stable REST API - financial statements, quotes, historical prices, SEC filings, fundamentals, analyst estimates, and economic data. Authenticated with an apikey query parameter.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      { "key": "key", "value": "apikey", "type": "string" },
+      { "key": "value", "value": "{{apikey}}", "type": "string" },
+      { "key": "in", "value": "query", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://financialmodelingprep.com/stable", "type": "string" },
+    { "key": "apikey", "value": "YOUR_API_KEY", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Financial Statements",
+      "item": [
+        {
+          "name": "Income Statement",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/income-statement?symbol=AAPL&period=annual&limit=5&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["income-statement"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "period", "value": "annual" },
+                { "key": "limit", "value": "5" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Annual or quarterly income statements for a company."
+          }
+        },
+        {
+          "name": "Balance Sheet Statement",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/balance-sheet-statement?symbol=AAPL&period=annual&limit=5&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["balance-sheet-statement"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "period", "value": "annual" },
+                { "key": "limit", "value": "5" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Annual or quarterly balance sheet statements for a company."
+          }
+        },
+        {
+          "name": "Cash Flow Statement",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cash-flow-statement?symbol=AAPL&period=annual&limit=5&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["cash-flow-statement"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "period", "value": "annual" },
+                { "key": "limit", "value": "5" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Annual or quarterly cash-flow statements for a company."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quotes and Prices",
+      "item": [
+        {
+          "name": "Full Quote",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/quote?symbol=AAPL&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["quote"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Real-time full quote for a symbol."
+          }
+        },
+        {
+          "name": "Historical End-of-Day Prices",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/historical-price-eod/full?symbol=AAPL&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["historical-price-eod", "full"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "from", "value": "" },
+                { "key": "to", "value": "" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Historical daily OHLCV bars, up to 30 years."
+          }
+        }
+      ]
+    },
+    {
+      "name": "SEC Filings",
+      "item": [
+        {
+          "name": "SEC Filings by Symbol",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/sec-filings-search/symbol?symbol=AAPL&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["sec-filings-search", "symbol"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Search SEC filings for a company by ticker."
+          }
+        },
+        {
+          "name": "SEC Filings by CIK",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/sec-filings-search/cik?cik=0000320193&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["sec-filings-search", "cik"],
+              "query": [
+                { "key": "cik", "value": "0000320193" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Search SEC filings for a company by CIK."
+          }
+        },
+        {
+          "name": "Latest SEC Filings",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/financials-latest?apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["financials-latest"],
+              "query": [
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Feed of the most recent SEC filings across public companies."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fundamentals",
+      "item": [
+        {
+          "name": "Company Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/profile?symbol=AAPL&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["profile"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Company profile - sector, industry, market cap, exchange."
+          }
+        },
+        {
+          "name": "Key Metrics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/key-metrics?symbol=AAPL&period=annual&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["key-metrics"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "period", "value": "annual" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Per-period key financial metrics."
+          }
+        },
+        {
+          "name": "Financial Ratios",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/ratios?symbol=AAPL&period=annual&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["ratios"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "period", "value": "annual" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Per-period financial ratios."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analyst Estimates",
+      "item": [
+        {
+          "name": "Analyst Estimates",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analyst-estimates?symbol=AAPL&period=annual&page=0&limit=10&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["analyst-estimates"],
+              "query": [
+                { "key": "symbol", "value": "AAPL" },
+                { "key": "period", "value": "annual" },
+                { "key": "page", "value": "0" },
+                { "key": "limit", "value": "10" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Consensus analyst estimates for revenue, EPS, and more."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Economic Data",
+      "item": [
+        {
+          "name": "Economic Indicators",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/economic-indicators?name=GDP&apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["economic-indicators"],
+              "query": [
+                { "key": "name", "value": "GDP" },
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "Macroeconomic indicator time series."
+          }
+        },
+        {
+          "name": "Treasury Rates",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/treasury-rates?apikey={{apikey}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["treasury-rates"],
+              "query": [
+                { "key": "apikey", "value": "{{apikey}}" }
+              ]
+            },
+            "description": "U.S. treasury rates across standard maturities."
+          }
+        }
+      ]
+    }
+  ]
+}
