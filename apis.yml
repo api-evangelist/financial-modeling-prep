@@ -31,7 +31,7 @@ tags:
 - Financial Statements
 - Historical
 url: https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: financial-modeling-prep:financial-modeling-prep-balance-sheet-statement-api
   name: Financial Modeling Prep Balance Sheet Statement API
