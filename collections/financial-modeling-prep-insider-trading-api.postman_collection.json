@@ -1,0 +1,246 @@
+{
+  "item": [
+    {
+      "id": "03df1cb8-ba9c-4ef9-8d64-a1e027bda492",
+      "name": "Insider Trading",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95ac2021-066b-4cda-a631-237c7ea600d7",
+          "name": "Search insider trading activity by company or symbol",
+          "request": {
+            "name": "Search insider trading activity by company or symbol",
+            "description": {
+              "content": "Search insider trading activity by company or symbol. Documented at https://site.financialmodelingprep.com/developer/docs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "insider-trading",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportingCik",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "companyCik",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "transactionType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40f05739-f9a0-4772-a453-8053dfb71fb8",
+              "name": "Insider Trading data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "insider-trading",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "reportingCik",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "companyCik",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "transactionType",
+                      "value": "S-Sale"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"symbol\": \"WHF\",\n    \"filingDate\": \"2026-06-05\",\n    \"transactionDate\": \"2026-06-05\",\n    \"reportingCik\": \"0001050047\",\n    \"companyCik\": 1552198,\n    \"transactionType\": \"P-Purchase\",\n    \"securitiesOwned\": 309607,\n    \"reportingName\": \"BOLDUC JOHN\",\n    \"typeOfOwner\": \"director\",\n    \"acquisitionOrDisposition\": \"A\",\n    \"directOrIndirect\": \"I\",\n    \"formType\": \"4\",\n    \"securitiesTransacted\": 3570,\n    \"price\": 6.77,\n    \"securityName\": \"Common Stock, par value $0.001 per share\",\n    \"url\": \"https://www.sec.gov/Archives/edgar/data/1552198/000110465926071091/0001104659-26-071091-index.htm\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "404a08e2-1901-4f5a-8eaa-4602ce9f95b9",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "insider-trading",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "reportingCik",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "companyCik",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "transactionType",
+                      "value": "S-Sale"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error Message\": \"Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid for more information.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5dd97945-17ab-4433-9090-6a4bd4664beb",
+    "name": "Financial Modeling Prep Insider Trading API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) Insider Trading API — part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

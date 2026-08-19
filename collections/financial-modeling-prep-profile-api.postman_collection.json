@@ -1,0 +1,179 @@
+{
+  "item": [
+    {
+      "id": "fce4f85f-196a-44f4-8fa4-4a70b87949f0",
+      "name": "Profile",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e69f7f1a-6315-40ee-9c4d-67e3303a84d4",
+          "name": "Get company profile data",
+          "request": {
+            "name": "Get company profile data",
+            "description": {
+              "content": "Get company profile data. Documented at https://site.financialmodelingprep.com/developer/docs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74fb1c99-10b1-4020-a149-ab85b76758cf",
+              "name": "Profile data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"symbol\": \"AAPL\",\n    \"price\": 262.82,\n    \"marketCap\": 3900351299800,\n    \"beta\": 1.086,\n    \"lastDividend\": 1.05,\n    \"range\": \"169.21-265.29\",\n    \"change\": 3.24,\n    \"changePercentage\": 1.24817,\n    \"volume\": 36725325,\n    \"averageVolume\": 44645993,\n    \"companyName\": \"Apple Inc.\",\n    \"currency\": \"USD\",\n    \"cik\": 320193,\n    \"isin\": \"US0378331005\",\n    \"cusip\": 37833100,\n    \"exchangeFullName\": \"NASDAQ Global Select\",\n    \"exchange\": \"NASDAQ\",\n    \"industry\": \"Consumer Electronics\",\n    \"website\": \"https://www.apple.com\",\n    \"description\": \"Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, and HomePod. It also provides AppleCare support and cloud services; and operates various platforms, including the App Store that allow customers to discov...\",\n    \"ceo\": \"Timothy D. Cook\",\n    \"sector\": \"Technology\",\n    \"country\": \"US\",\n    \"fullTimeEmployees\": \"164000\",\n    \"phone\": \"(408) 996-1010\",\n    \"address\": \"One Apple Park Way\",\n    \"city\": \"Cupertino\",\n    \"state\": \"CA\",\n    \"zip\": \"95014\",\n    \"image\": \"https://images.financialmodelingprep.com/symbol/AAPL.png\",\n    \"ipoDate\": \"1980-12-12\",\n    \"defaultImage\": false,\n    \"isEtf\": false,\n    \"isActivelyTrading\": true,\n    \"isAdr\": false,\n    \"isFund\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fde323e-c161-4e00-889f-371832ac5815",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error Message\": \"Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid for more information.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d5dafe21-c1c6-45c0-a89b-6b744832f895",
+    "name": "Financial Modeling Prep Profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) Profile API — part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

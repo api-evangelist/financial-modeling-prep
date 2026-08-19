@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Insider Trading API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Insider Trading",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search insider trading activity by company or symbol",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/insider-trading/search",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "AAPL",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "0",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "reportingCik",
+                "value": "1496686",
+                "type": "query"
+              },
+              {
+                "name": "companyCik",
+                "value": "320193",
+                "type": "query"
+              },
+              {
+                "name": "transactionType",
+                "value": "S-Sale",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search insider trading activity by company or symbol. Documented at https://site.financialmodelingprep.com/developer/docs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

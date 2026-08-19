@@ -1,0 +1,205 @@
+{
+  "item": [
+    {
+      "id": "42bc42da-4986-4f67-a860-eb70aedcf0e3",
+      "name": "Balance Sheet Statement",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4dcc33e1-6e96-4cb5-86e7-a4677999e3d5",
+          "name": "Get balance sheet statements for a company",
+          "request": {
+            "name": "Get balance sheet statements for a company",
+            "description": {
+              "content": "Get balance sheet statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "balance-sheet-statement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31f004e8-9151-46c2-ade6-4238f06bf2eb",
+              "name": "Balance Sheet Statement data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "balance-sheet-statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"2024-09-28\",\n    \"symbol\": \"AAPL\",\n    \"reportedCurrency\": \"USD\",\n    \"cik\": 320193,\n    \"filingDate\": \"2024-11-01\",\n    \"acceptedDate\": \"2024-11-01 06:01:36\",\n    \"fiscalYear\": \"2024\",\n    \"period\": \"FY\",\n    \"cashAndCashEquivalents\": 29943000000,\n    \"shortTermInvestments\": 35228000000,\n    \"cashAndShortTermInvestments\": 65171000000,\n    \"netReceivables\": 66243000000,\n    \"accountsReceivables\": 33410000000,\n    \"otherReceivables\": 32833000000,\n    \"inventory\": 7286000000,\n    \"prepaids\": 0,\n    \"otherCurrentAssets\": 14287000000,\n    \"totalCurrentAssets\": 152987000000,\n    \"propertyPlantEquipmentNet\": 45680000000,\n    \"goodwill\": 0,\n    \"intangibleAssets\": 0,\n    \"goodwillAndIntangibleAssets\": 0,\n    \"longTermInvestments\": 91479000000,\n    \"taxAssets\": 19499000000,\n    \"otherNonCurrentAssets\": 55335000000,\n    \"totalNonCurrentAssets\": 211993000000,\n    \"otherAssets\": 0,\n    \"totalAssets\": 364980000000,\n    \"totalPayables\": 95561000000,\n    \"accountPayables\": 68960000000,\n    \"otherPayables\": 26601000000,\n    \"accruedExpenses\": 0,\n    \"shortTermDebt\": 20879000000,\n    \"capitalLeaseObligationsCurrent\": 1632000000,\n    \"taxPayables\": 26601000000,\n    \"deferredRevenue\": 8249000000,\n    \"otherCurrentLiabilities\": 50071000000,\n    \"totalCurrentLiabilities\": 176392000000,\n    \"longTermDebt\": 85750000000,\n    \"deferredRevenueNonCurrent\": 10798000000,\n    \"deferredTaxLiabilitiesNonCurrent\": 0,\n    \"otherNonCurrentLiabilities\": 35090000000,\n    \"totalNonCurrentLiabilities\": 131638000000,\n    \"otherLiabilities\": 0,\n    \"capitalLeaseObligations\": 12430000000,\n    \"totalLiabilities\": 308030000000,\n    \"treasuryStock\": 0,\n    \"preferredStock\": 0,\n    \"commonStock\": 83276000000,\n    \"retainedEarnings\": -19154000000,\n    \"additionalPaidInCapital\": 0,\n    \"accumulatedOtherComprehensiveIncomeLoss\": -7172000000,\n    \"otherTotalStockholdersEquity\": 0,\n    \"totalStockholdersEquity\": 56950000000,\n    \"totalEquity\": 56950000000,\n    \"minorityInterest\": 0,\n    \"totalLiabilitiesAndTotalEquity\": 364980000000,\n    \"totalInvestments\": 126707000000,\n    \"totalDebt\": 106629000000,\n    \"netDebt\": 76686000000\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3c65450-4fe1-4f0d-9737-a0a0f98b48ef",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "balance-sheet-statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error Message\": \"Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid for more information.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2fd860df-9d1f-4142-a266-04bdea266944",
+    "name": "Financial Modeling Prep Balance Sheet Statement API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) Balance Sheet Statement API — part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

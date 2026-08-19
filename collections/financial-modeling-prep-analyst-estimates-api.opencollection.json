@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Analyst Estimates API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analyst Estimates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Analyst estimates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/analyst-estimates",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Reporting period."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Returns consensus analyst estimates - projected revenue, EPS, EBITDA, and net income - for a ticker symbol, by annual or quarterly period."
+        },
+        {
+          "info": {
+            "name": "Financial estimates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/financial-estimates",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Reporting period."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Returns forward-looking financial estimates for a ticker symbol as forecast by analysts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

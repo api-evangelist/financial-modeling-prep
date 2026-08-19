@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Balance Sheet Statement API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Balance Sheet Statement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get balance sheet statements for a company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/balance-sheet-statement",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "AAPL",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "5",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "Q1,Q2,Q3,Q4,FY,annual,quarter",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get balance sheet statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

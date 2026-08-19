@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Search API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search stock ticker symbols by company name or symbol",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/search-symbol",
+            "params": [
+              {
+                "name": "query",
+                "value": "AAPL",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query"
+              },
+              {
+                "name": "exchange",
+                "value": "NASDAQ",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search stock ticker symbols by company name or symbol. Documented at https://site.financialmodelingprep.com/developer/docs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

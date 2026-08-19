@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Historical Price Full API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Historical Price Full",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get full historical end-of-day prices for a symbol",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/historical-price-eod/full",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "AAPL",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "2026-01-27",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "2026-04-27",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get full historical end-of-day prices for a symbol. Documented at https://site.financialmodelingprep.com/developer/docs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,137 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Analyst Estimates SEC Filings API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SEC Filings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SEC filings by symbol",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/sec-filings-search/symbol",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Searches SEC filings for a company by ticker symbol within a date range, returning filing metadata and links to the source EDGAR documents."
+        },
+        {
+          "info": {
+            "name": "SEC filings by CIK",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/sec-filings-search/cik",
+            "params": [
+              {
+                "name": "cik",
+                "value": "",
+                "type": "query",
+                "description": "SEC Central Index Key, e.g. 0000320193 for Apple."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Searches SEC filings for a company by its SEC Central Index Key (CIK) within a date range."
+        },
+        {
+          "info": {
+            "name": "Latest SEC filings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/financials-latest",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Returns the most recent SEC filings submitted across public companies, for real-time monitoring of new disclosures."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

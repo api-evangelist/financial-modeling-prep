@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Analyst Estimates Economic Data API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Economic Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Economic indicators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/economic-indicators",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Indicator name, e.g. GDP, CPI, unemploymentRate."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)."
+              }
+            ]
+          },
+          "docs": "Returns time-series values for a named macroeconomic indicator such as GDP, CPI, or unemployment rate."
+        },
+        {
+          "info": {
+            "name": "Treasury rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/treasury-rates",
+            "params": [
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)."
+              }
+            ]
+          },
+          "docs": "Returns U.S. treasury rates across standard maturities for a date range."
+        },
+        {
+          "info": {
+            "name": "Economic calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/economic-calendar",
+            "params": [
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)."
+              }
+            ]
+          },
+          "docs": "Returns scheduled macroeconomic events and releases within a date range."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

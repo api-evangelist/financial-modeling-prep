@@ -1,0 +1,205 @@
+{
+  "item": [
+    {
+      "id": "cb9b08c1-a42e-4042-829c-e7576b51c952",
+      "name": "Ratios",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b26554d5-439c-4ea7-a5ed-de667c231068",
+          "name": "Get financial ratios for a company",
+          "request": {
+            "name": "Get financial ratios for a company",
+            "description": {
+              "content": "Get financial ratios for a company. Documented at https://site.financialmodelingprep.com/developer/docs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ratios"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ed97d86-d76b-4291-b8b5-ed544a3b41e8",
+              "name": "Ratios data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ratios"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"symbol\": \"AAPL\",\n    \"date\": \"2024-09-28\",\n    \"fiscalYear\": \"2024\",\n    \"period\": \"FY\",\n    \"reportedCurrency\": \"USD\",\n    \"grossProfitMargin\": 0.4620634981523393,\n    \"ebitMargin\": 0.31510222870075566,\n    \"ebitdaMargin\": 0.3443707085043538,\n    \"operatingProfitMargin\": 0.31510222870075566,\n    \"pretaxProfitMargin\": 0.3157901466620635,\n    \"continuousOperationsProfitMargin\": 0.23971255769943867,\n    \"netProfitMargin\": 0.23971255769943867,\n    \"bottomLineProfitMargin\": 0.23971255769943867,\n    \"receivablesTurnover\": 5.903038811648023,\n    \"payablesTurnover\": 3.0503480278422272,\n    \"inventoryTurnover\": 28.870710952511665,\n    \"fixedAssetTurnover\": 8.560310858143607,\n    \"assetTurnover\": 1.0713874732862074,\n    \"currentRatio\": 0.8673125765340832,\n    \"quickRatio\": 0.8260068483831466,\n    \"solvencyRatio\": 0.3414634938155374,\n    \"cashRatio\": 0.16975259648963673,\n    \"priceToEarningsRatio\": 37.287278415656736,\n    \"priceToEarningsGrowthRatio\": -45.93792700808932,\n    \"forwardPriceToEarningsGrowthRatio\": -45.93792700808932,\n    \"priceToBookRatio\": 61.37243774486391,\n    \"priceToSalesRatio\": 8.93822887866815,\n    \"priceToFreeCashFlowRatio\": 32.12256867269569,\n    \"priceToOperatingCashFlowRatio\": 29.55638142954995,\n    \"debtToAssetsRatio\": 0.29215025480848267,\n    \"debtToEquityRatio\": 1.872326602282704,\n    \"debtToCapitalRatio\": 0.6518501763673821,\n    \"longTermDebtToCapitalRatio\": 0.6009110021023125,\n    \"financialLeverageRatio\": 6.408779631255487,\n    \"workingCapitalTurnoverRatio\": -31.099932397502684,\n    \"operatingCashFlowRatio\": 0.6704045534944896,\n    \"operatingCashFlowSalesRatio\": 0.3024128274962599,\n    \"freeCashFlowOperatingCashFlowRatio\": 0.9201126388959359,\n    \"debtServiceCoverageRatio\": 5.024761722304708,\n    \"interestCoverageRatio\": 0,\n    \"shortTermOperatingCashFlowCoverageRatio\": 5.663777000814215,\n    \"operatingCashFlowCoverageRatio\": 1.109022873702276,\n    \"capitalExpenditureCoverageRatio\": 12.517624642743728,\n    \"dividendPaidAndCapexCoverageRatio\": 4.7912969490701345,\n    \"dividendPayoutRatio\": 0.16252026969360758,\n    \"dividendYield\": 0.0043585983369965175,\n    \"dividendYieldPercentage\": 0.43585983369965176,\n    \"revenuePerShare\": 25.484914639368924,\n    \"netIncomePerShare\": 6.109054070954992,\n    \"interestDebtPerShare\": 6.949329249507765,\n    \"cashPerShare\": 4.247388013764271,\n    \"bookValuePerShare\": 3.711600978715614,\n    \"tangibleBookValuePerShare\": 3.711600978715614,\n    \"shareholdersEquityPerShare\": 3.711600978715614,\n    \"operatingCashFlowPerShare\": 7.706965094592383,\n    \"capexPerShare\": 0.6156891035281195,\n    \"freeCashFlowPerShare\": 7.091275991064264,\n    \"netIncomePerEBT\": 0.7590881483581001,\n    \"ebtPerEbit\": 1.0021831580314244,\n    \"priceToFairValue\": 61.37243774486391,\n    \"debtToMarketCap\": 0.03050761336980449,\n    \"effectiveTaxRate\": 0.24091185164189982,\n    \"enterpriseValueMultiple\": 26.524727497716487\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6339dca6-23c6-4c42-a6b5-31bdb659bb80",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ratios"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error Message\": \"Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid for more information.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0a8bd69c-a8a6-4ced-9acb-63d962f3cbc2",
+    "name": "Financial Modeling Prep Ratios API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) Ratios API — part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

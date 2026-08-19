@@ -1,0 +1,347 @@
+{
+  "item": [
+    {
+      "id": "58141782-d770-4426-9f91-48081b09f8bd",
+      "name": "Fundamentals",
+      "description": {
+        "content": "Company profile plus derived key metrics and ratios.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "93fb2d42-5236-4264-8a0a-1a9b5219af06",
+          "name": "Company profile",
+          "request": {
+            "name": "Company profile",
+            "description": {
+              "content": "Returns a company profile - sector, industry, description, market cap, exchange, executives, and identifiers - for a ticker symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "260377f7-5a3f-437d-a500-293d3a138a2f",
+              "name": "The company profile.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aef11914-4202-41f8-a10a-498a6c60818d",
+          "name": "Key metrics",
+          "request": {
+            "name": "Key metrics",
+            "description": {
+              "content": "Returns per-period key financial metrics (per-share values, margins, returns, and other derived measures) for a ticker symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "key-metrics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "annual",
+                  "description": "Reporting period."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Maximum number of records to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82c56b56-c1cc-4aa3-8f21-6371bcb14405",
+              "name": "A list of key-metric periods.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "key-metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "annual"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74cedccd-72a4-453a-a199-0710c8d08715",
+          "name": "Financial ratios",
+          "request": {
+            "name": "Financial ratios",
+            "description": {
+              "content": "Returns per-period financial ratios (liquidity, profitability, leverage, and valuation) for a ticker symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ratios"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "annual",
+                  "description": "Reporting period."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Maximum number of records to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc03c8fb-a603-41ef-a0ac-e9c3f9c48af8",
+              "name": "A list of ratio periods.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ratios"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "annual"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3e348f83-8b07-4696-8ad3-5e47ee52a7fa",
+    "name": "Financial Modeling Prep Analyst Estimates Fundamentals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) provides real-time and historical financial data through more than 100 REST endpoints served from the stable base https://financialmodelingprep.com/stable. Coverage includes company financial statements (income statement, balance sheet, cash flow), real-time and historical quotes for stocks, forex, crypto, and commodities, SEC filings, analyst estimates, company fundamentals (profile, key metrics, ratios), and macroeconomic indicators. All requests are authenticated with an API key passed as the `apikey` query parameter. Responses default to JSON and most endpoints also support CSV via the `datatype` parameter. This document models a representative subset of the stable endpoints; see the FMP developer docs for the full catalog. FMP also exposes a real-time WebSocket surface, modeled separately in asyncapi/financialmodelingprep-asyncapi.yml.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "item": [
+    {
+      "id": "6bdf0174-f043-4f99-8281-8df15982ce7a",
+      "name": "Economic Data",
+      "description": {
+        "content": "Macroeconomic indicators, treasury rates, and economic calendar.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2935b57b-9e11-4074-9f46-2165d5aeb217",
+          "name": "Economic indicators",
+          "request": {
+            "name": "Economic indicators",
+            "description": {
+              "content": "Returns time-series values for a named macroeconomic indicator such as GDP, CPI, or unemployment rate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "economic-indicators"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) Indicator name, e.g. GDP, CPI, unemploymentRate."
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<date>",
+                  "description": "Start date (YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<date>",
+                  "description": "End date (YYYY-MM-DD)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90f9316d-fd4a-4e43-a6c7-cad084f0d5ab",
+              "name": "A macroeconomic indicator time series.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "economic-indicators"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4872620f-15cd-431a-a44e-ff73808ba798",
+          "name": "Treasury rates",
+          "request": {
+            "name": "Treasury rates",
+            "description": {
+              "content": "Returns U.S. treasury rates across standard maturities for a date range.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "treasury-rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<date>",
+                  "description": "Start date (YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<date>",
+                  "description": "End date (YYYY-MM-DD)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "84c3c1ca-83ec-4e56-821f-d5bb0d78d883",
+              "name": "Treasury rates by maturity.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "treasury-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea903db1-d483-41a6-9d66-98514c3fe719",
+          "name": "Economic calendar",
+          "request": {
+            "name": "Economic calendar",
+            "description": {
+              "content": "Returns scheduled macroeconomic events and releases within a date range.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "economic-calendar"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<date>",
+                  "description": "Start date (YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<date>",
+                  "description": "End date (YYYY-MM-DD)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efa18740-b764-4636-b096-f8c4476678f2",
+              "name": "A list of economic calendar events.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "economic-calendar"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1b5eb3bf-a733-4498-bcf3-06efc4f30823",
+    "name": "Financial Modeling Prep Analyst Estimates Economic Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) provides real-time and historical financial data through more than 100 REST endpoints served from the stable base https://financialmodelingprep.com/stable. Coverage includes company financial statements (income statement, balance sheet, cash flow), real-time and historical quotes for stocks, forex, crypto, and commodities, SEC filings, analyst estimates, company fundamentals (profile, key metrics, ratios), and macroeconomic indicators. All requests are authenticated with an API key passed as the `apikey` query parameter. Responses default to JSON and most endpoints also support CSV via the `datatype` parameter. This document models a representative subset of the stable endpoints; see the FMP developer docs for the full catalog. FMP also exposes a real-time WebSocket surface, modeled separately in asyncapi/financialmodelingprep-asyncapi.yml.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Analyst Estimates Financial Statements API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Financial Statements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Income statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/income-statement",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Reporting period."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Returns annual or quarterly income statements for a company, identified by ticker symbol."
+        },
+        {
+          "info": {
+            "name": "Balance sheet statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/balance-sheet-statement",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Reporting period."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Returns annual or quarterly balance sheet statements for a company, identified by ticker symbol."
+        },
+        {
+          "info": {
+            "name": "Cash flow statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/cash-flow-statement",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Reporting period."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return."
+              }
+            ]
+          },
+          "docs": "Returns annual or quarterly cash-flow statements for a company, identified by ticker symbol."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,205 @@
+{
+  "item": [
+    {
+      "id": "0854940d-526d-4ec6-ac46-a8f46609d93f",
+      "name": "Cash Flow Statement",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "65d1e023-cead-45f2-9f77-ea17087e640a",
+          "name": "Get cash flow statements for a company",
+          "request": {
+            "name": "Get cash flow statements for a company",
+            "description": {
+              "content": "Get cash flow statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cash-flow-statement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d9f8940-c9f3-4a05-b639-b2694a6444da",
+              "name": "Cash Flow Statement data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cash-flow-statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"2024-09-28\",\n    \"symbol\": \"AAPL\",\n    \"reportedCurrency\": \"USD\",\n    \"cik\": 320193,\n    \"filingDate\": \"2024-11-01\",\n    \"acceptedDate\": \"2024-11-01 06:01:36\",\n    \"fiscalYear\": \"2024\",\n    \"period\": \"FY\",\n    \"netIncome\": 93736000000,\n    \"depreciationAndAmortization\": 11445000000,\n    \"deferredIncomeTax\": 0,\n    \"stockBasedCompensation\": 11688000000,\n    \"changeInWorkingCapital\": 3651000000,\n    \"accountsReceivables\": -5144000000,\n    \"inventory\": -1046000000,\n    \"accountsPayables\": 6020000000,\n    \"otherWorkingCapital\": 3821000000,\n    \"otherNonCashItems\": -2266000000,\n    \"netCashProvidedByOperatingActivities\": 118254000000,\n    \"investmentsInPropertyPlantAndEquipment\": -9447000000,\n    \"acquisitionsNet\": 0,\n    \"purchasesOfInvestments\": -48656000000,\n    \"salesMaturitiesOfInvestments\": 62346000000,\n    \"otherInvestingActivities\": -1308000000,\n    \"netCashProvidedByInvestingActivities\": 2935000000,\n    \"netDebtIssuance\": -5998000000,\n    \"longTermNetDebtIssuance\": -9958000000,\n    \"shortTermNetDebtIssuance\": 3960000000,\n    \"netStockIssuance\": -94949000000,\n    \"netCommonStockIssuance\": -94949000000,\n    \"commonStockIssuance\": 0,\n    \"commonStockRepurchased\": -94949000000,\n    \"netPreferredStockIssuance\": 0,\n    \"netDividendsPaid\": -15234000000,\n    \"commonDividendsPaid\": -15234000000,\n    \"preferredDividendsPaid\": 0,\n    \"otherFinancingActivities\": -5802000000,\n    \"netCashProvidedByFinancingActivities\": -121983000000,\n    \"effectOfForexChangesOnCash\": 0,\n    \"netChangeInCash\": -794000000,\n    \"cashAtEndOfPeriod\": 29943000000,\n    \"cashAtBeginningOfPeriod\": 30737000000,\n    \"operatingCashFlow\": 118254000000,\n    \"capitalExpenditure\": -9447000000,\n    \"freeCashFlow\": 108807000000,\n    \"incomeTaxesPaid\": 26102000000,\n    \"interestPaid\": 0\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8837df1-d14b-4710-acc6-03d3ce2618b8",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cash-flow-statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error Message\": \"Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid for more information.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "72ee45e1-653a-40a5-a7c5-62407fad878b",
+    "name": "Financial Modeling Prep Cash Flow Statement API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) Cash Flow Statement API — part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

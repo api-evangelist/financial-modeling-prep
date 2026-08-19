@@ -2,9 +2,9 @@ generated: '2026-07-22'
 method: derived
 status: candidate
 source: openapi/ (one candidate tool per operationId)
-note: No official Financial Modeling Prep MCP server was found in the FMP docs, the FinancialModelingPrep GitHub
-  org, or the MCP registry as of this round. This is a candidate tool list derived from the OpenAPI operations in
-  this repo.
+note: No official Financial Modeling Prep MCP server was found in the FMP docs, the FinancialModelingPrep
+  GitHub org, or the MCP registry as of this round. This is a candidate tool list derived from the OpenAPI
+  operations in this repo.
 server:
   name: financial-modeling-prep
   transport: http
@@ -39,3 +39,9 @@ tools:
 - name: get_insider_trading
   description: Search insider trading activity by company or symbol
   source_operation: openapi/financial-modeling-prep-insider-trading-api-openapi.yml#getInsiderTrading
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census

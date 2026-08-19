@@ -1,0 +1,205 @@
+{
+  "item": [
+    {
+      "id": "3844bf0a-111b-49c5-b525-7cf4f321fe63",
+      "name": "Income Statement",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e9a57aa6-6d8d-46cf-b402-58560417171f",
+          "name": "Get income statements for a company",
+          "request": {
+            "name": "Get income statements for a company",
+            "description": {
+              "content": "Get income statements for a company. Documented at https://site.financialmodelingprep.com/developer/docs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "income-statement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07bf6157-79c7-44c1-aace-7c487c9b13b2",
+              "name": "Income Statement data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "income-statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"2024-09-28\",\n    \"symbol\": \"AAPL\",\n    \"reportedCurrency\": \"USD\",\n    \"cik\": 320193,\n    \"filingDate\": \"2024-11-01\",\n    \"acceptedDate\": \"2024-11-01 06:01:36\",\n    \"fiscalYear\": \"2024\",\n    \"period\": \"FY\",\n    \"revenue\": 391035000000,\n    \"costOfRevenue\": 210352000000,\n    \"grossProfit\": 180683000000,\n    \"researchAndDevelopmentExpenses\": 31370000000,\n    \"generalAndAdministrativeExpenses\": 0,\n    \"sellingAndMarketingExpenses\": 0,\n    \"sellingGeneralAndAdministrativeExpenses\": 26097000000,\n    \"otherExpenses\": 0,\n    \"operatingExpenses\": 57467000000,\n    \"costAndExpenses\": 267819000000,\n    \"netInterestIncome\": 0,\n    \"interestIncome\": 0,\n    \"interestExpense\": 0,\n    \"depreciationAndAmortization\": 11445000000,\n    \"ebitda\": 134661000000,\n    \"ebit\": 123216000000,\n    \"nonOperatingIncomeExcludingInterest\": 0,\n    \"operatingIncome\": 123216000000,\n    \"totalOtherIncomeExpensesNet\": 269000000,\n    \"incomeBeforeTax\": 123485000000,\n    \"incomeTaxExpense\": 29749000000,\n    \"netIncomeFromContinuingOperations\": 93736000000,\n    \"netIncomeFromDiscontinuedOperations\": 0,\n    \"otherAdjustmentsToNetIncome\": 0,\n    \"netIncome\": 93736000000,\n    \"netIncomeDeductions\": 0,\n    \"bottomLineNetIncome\": 93736000000,\n    \"eps\": 6.11,\n    \"epsDiluted\": 6.08,\n    \"weightedAverageShsOut\": 15343783000,\n    \"weightedAverageShsOutDil\": 15408095000\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "679dbccc-aea0-4775-88fa-e30c5b08a166",
+              "name": "Invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "income-statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "AAPL"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "Q1,Q2,Q3,Q4,FY,annual,quarter"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error Message\": \"Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid for more information.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://financialmodelingprep.com/stable",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "05ad6150-6b32-4107-80cc-210b8aab021f",
+    "name": "Financial Modeling Prep Income Statement API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Financial Modeling Prep (FMP) Income Statement API — part of the FMP stable REST API. Generated from the official FMP API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.\n\nContact Support:\n Name: Financial Modeling Prep",
+      "type": "text/plain"
+    }
+  }
+}

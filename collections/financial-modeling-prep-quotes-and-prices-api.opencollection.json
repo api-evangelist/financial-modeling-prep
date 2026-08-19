@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Financial Modeling Prep Analyst Estimates Quotes and Prices API",
+    "version": "stable"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quotes and Prices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Full quote",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/quote",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              }
+            ]
+          },
+          "docs": "Returns a real-time full quote for a stock, ETF, index, forex pair, crypto pair, or commodity, identified by symbol."
+        },
+        {
+          "info": {
+            "name": "Historical end-of-day prices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://financialmodelingprep.com/stable/historical-price-eod/full",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)."
+              }
+            ]
+          },
+          "docs": "Returns historical daily (end-of-day) open/high/low/close and volume for a symbol, optionally bounded by a from/to date range. Up to 30 years of history is available."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
