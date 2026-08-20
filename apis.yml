@@ -147,6 +147,8 @@ apis:
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
+  - Quotes
+  tags_raw:
   - Quote
   properties:
   - type: OpenAPI
