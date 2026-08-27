@@ -35,7 +35,8 @@ specificationVersion: '0.23'
 apis:
 - aid: financial-modeling-prep:financial-modeling-prep-balance-sheet-statement-api
   name: Financial Modeling Prep Balance Sheet Statement API
-  description: The Balance Sheet Statement API from Financial Modeling Prep — 1 operation(s) for balance sheet statement.
+  description: >-
+    The Balance Sheet Statement API from Financial Modeling Prep — 1 operation(s) for balance sheet statement.
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
@@ -53,7 +54,8 @@ apis:
     url: overlays/financial-modeling-prep-balance-sheet-statement-api-overlay.yaml
 - aid: financial-modeling-prep:financial-modeling-prep-cash-flow-statement-api
   name: Financial Modeling Prep Cash Flow Statement API
-  description: The Cash Flow Statement API from Financial Modeling Prep — 1 operation(s) for cash flow statement.
+  description: >-
+    The Cash Flow Statement API from Financial Modeling Prep — 1 operation(s) for cash flow statement.
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
@@ -71,7 +73,8 @@ apis:
     url: overlays/financial-modeling-prep-cash-flow-statement-api-overlay.yaml
 - aid: financial-modeling-prep:financial-modeling-prep-historical-price-full-api
   name: Financial Modeling Prep Historical Price Full API
-  description: The Historical Price Full API from Financial Modeling Prep — 1 operation(s) for historical price full.
+  description: >-
+    The Historical Price Full API from Financial Modeling Prep — 1 operation(s) for historical price full.
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
@@ -89,7 +92,8 @@ apis:
     url: overlays/financial-modeling-prep-historical-price-full-api-overlay.yaml
 - aid: financial-modeling-prep:financial-modeling-prep-income-statement-api
   name: Financial Modeling Prep Income Statement API
-  description: The Income Statement API from Financial Modeling Prep — 1 operation(s) for income statement.
+  description: >-
+    The Income Statement API from Financial Modeling Prep — 1 operation(s) for income statement.
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
@@ -107,7 +111,8 @@ apis:
     url: overlays/financial-modeling-prep-income-statement-api-overlay.yaml
 - aid: financial-modeling-prep:financial-modeling-prep-insider-trading-api
   name: Financial Modeling Prep Insider Trading API
-  description: The Insider Trading API from Financial Modeling Prep — 1 operation(s) for insider trading.
+  description: >-
+    The Insider Trading API from Financial Modeling Prep — 1 operation(s) for insider trading.
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
@@ -215,6 +220,66 @@ apis:
     url: https://site.financialmodelingprep.com/developer/docs/pricing
   - type: Overlay
     url: overlays/financial-modeling-prep-stock-api-overlay.yaml
+- aid: financial-modeling-prep:financial-modeling-prep-analyst-estimates-api
+  name: Financial Modeling Prep Analyst Estimates API
+  description: Consensus estimates, price targets, and rating grades.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Analyst Estimates
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-analyst-estimates-api-openapi.yml
+- aid: financial-modeling-prep:financial-modeling-prep-economic-data-api
+  name: Financial Modeling Prep Economic Data API
+  description: Macroeconomic indicators, treasury rates, and economic calendar.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Economic Data
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-economic-data-api-openapi.yml
+- aid: financial-modeling-prep:financial-modeling-prep-financial-statements-api
+  name: Financial Modeling Prep Financial Statements API
+  description: Income statement, balance sheet, and cash-flow statement data.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Financial Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-financial-statements-api-openapi.yml
+- aid: financial-modeling-prep:financial-modeling-prep-fundamentals-api
+  name: Financial Modeling Prep Fundamentals API
+  description: Company profile plus derived key metrics and ratios.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Fundamentals
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-fundamentals-api-openapi.yml
+- aid: financial-modeling-prep:financial-modeling-prep-quotes-and-prices-api
+  name: Financial Modeling Prep Quotes and Prices API
+  description: Real-time quotes and historical end-of-day prices.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - Quotes and Prices
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-quotes-and-prices-api-openapi.yml
+- aid: financial-modeling-prep:financial-modeling-prep-sec-filings-api
+  name: Financial Modeling Prep SEC Filings API
+  description: Latest and searchable SEC filings for public companies.
+  humanURL: https://site.financialmodelingprep.com/
+  baseURL: https://financialmodelingprep.com/stable
+  tags:
+  - SEC Filings
+  properties:
+  - type: OpenAPI
+    url: openapi/financial-modeling-prep-sec-filings-api-openapi.yml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/financial-modeling-prep/overview
