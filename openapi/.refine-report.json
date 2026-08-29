@@ -1,16 +1,7 @@
 {
   "provider": "financial-modeling-prep",
   "sources": [
-    "financial-modeling-prep-balance-sheet-statement-api-openapi.yml",
-    "financial-modeling-prep-cash-flow-statement-api-openapi.yml",
-    "financial-modeling-prep-historical-price-full-api-openapi.yml",
-    "financial-modeling-prep-income-statement-api-openapi.yml",
-    "financial-modeling-prep-insider-trading-api-openapi.yml",
-    "financial-modeling-prep-profile-api-openapi.yml",
-    "financial-modeling-prep-quote-api-openapi.yml",
-    "financial-modeling-prep-ratios-api-openapi.yml",
-    "financial-modeling-prep-search-api-openapi.yml",
-    "financial-modeling-prep-stock-api-openapi.yml"
+    "_original/financial-modeling-prep-openapi.yml"
   ],
   "outputs": [
     "financial-modeling-prep-balance-sheet-statement-api-openapi.yml",
@@ -27,6 +18,46 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "financial-modeling-prep-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /quote/{symbol} -> Quote",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /historical-price-full/{symbol} -> Historical Price Full",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /income-statement/{symbol} -> Income Statement",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /balance-sheet-statement/{symbol} -> Balance Sheet Statement",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /cash-flow-statement/{symbol} -> Cash Flow Statement",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /profile/{symbol} -> Profile",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /search -> Search",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /stock/list -> Stock",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /insider-trading -> Insider Trading",
+    "financial-modeling-prep-openapi.yml: tagged paths GET /ratios/{symbol} -> Ratios",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Balance Sheet Statement",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Cash Flow Statement",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Historical Price Full",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Income Statement",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Insider Trading",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Profile",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Quote",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Ratios",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Search",
+    "financial-modeling-prep-openapi.yml: declared missing tag: Stock"
+  ],
+  "skipped": [
+    "financial-modeling-prep-analyst-estimates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-balance-sheet-statement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-cash-flow-statement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-economic-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-financial-statements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-fundamentals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-historical-price-full-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-income-statement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-insider-trading-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-profile-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-quote-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-quotes-and-prices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-ratios-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-sec-filings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "financial-modeling-prep-stock-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

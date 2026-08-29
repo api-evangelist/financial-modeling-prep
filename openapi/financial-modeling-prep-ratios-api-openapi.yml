@@ -1,276 +1,65 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Financial Modeling Prep Ratios API
-  description: Financial Modeling Prep (FMP) Ratios API — part of the FMP stable REST API. Generated from the official FMP
-    API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been
-    discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.
-  version: stable
+  description: Financial Modeling Prep (FMP) provides financial market data including real-time and historical stock quotes, company fundamentals, financial statements (income, balance sheet, cash flow), insider transactions, earnings, ratios, and economic data. This OpenAPI spec covers a representative subset of the public REST API.
+  version: 3.0.0
   contact:
     name: Financial Modeling Prep
     url: https://site.financialmodelingprep.com/
 servers:
-- url: https://financialmodelingprep.com/stable
-  description: Financial Modeling Prep stable API
+- url: https://financialmodelingprep.com/api/v3
+  description: Financial Modeling Prep v3 API
 security:
 - apiKeyQuery: []
-- apiKeyHeader: []
 tags:
 - name: Ratios
 paths:
-  /ratios:
+  /ratios/{symbol}:
     get:
       operationId: getFinancialRatios
-      summary: Get financial ratios for a company
-      description: Get financial ratios for a company. Documented at https://site.financialmodelingprep.com/developer/docs.
-      tags:
-      - Ratios
+      summary: Get company financial ratios
       parameters:
-      - name: symbol
-        in: query
-        required: true
-        schema:
-          type: string
-        example: AAPL
-      - name: limit
-        in: query
-        required: false
-        schema:
-          type: number
-        example: '5'
-      - name: period
-        in: query
-        required: false
-        schema:
-          type: string
-        example: Q1,Q2,Q3,Q4,FY,annual,quarter
+      - $ref: '#/components/parameters/Symbol'
+      - $ref: '#/components/parameters/Period'
+      - $ref: '#/components/parameters/Limit'
       responses:
         '200':
-          description: Ratios data
+          description: Financial ratios
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FinancialRatios'
-              example:
-              - symbol: AAPL
-                date: '2024-09-28'
-                fiscalYear: '2024'
-                period: FY
-                reportedCurrency: USD
-                grossProfitMargin: 0.4620634981523393
-                ebitMargin: 0.31510222870075566
-                ebitdaMargin: 0.3443707085043538
-                operatingProfitMargin: 0.31510222870075566
-                pretaxProfitMargin: 0.3157901466620635
-                continuousOperationsProfitMargin: 0.23971255769943867
-                netProfitMargin: 0.23971255769943867
-                bottomLineProfitMargin: 0.23971255769943867
-                receivablesTurnover: 5.903038811648023
-                payablesTurnover: 3.0503480278422272
-                inventoryTurnover: 28.870710952511665
-                fixedAssetTurnover: 8.560310858143607
-                assetTurnover: 1.0713874732862074
-                currentRatio: 0.8673125765340832
-                quickRatio: 0.8260068483831466
-                solvencyRatio: 0.3414634938155374
-                cashRatio: 0.16975259648963673
-                priceToEarningsRatio: 37.287278415656736
-                priceToEarningsGrowthRatio: -45.93792700808932
-                forwardPriceToEarningsGrowthRatio: -45.93792700808932
-                priceToBookRatio: 61.37243774486391
-                priceToSalesRatio: 8.93822887866815
-                priceToFreeCashFlowRatio: 32.12256867269569
-                priceToOperatingCashFlowRatio: 29.55638142954995
-                debtToAssetsRatio: 0.29215025480848267
-                debtToEquityRatio: 1.872326602282704
-                debtToCapitalRatio: 0.6518501763673821
-                longTermDebtToCapitalRatio: 0.6009110021023125
-                financialLeverageRatio: 6.408779631255487
-                workingCapitalTurnoverRatio: -31.099932397502684
-                operatingCashFlowRatio: 0.6704045534944896
-                operatingCashFlowSalesRatio: 0.3024128274962599
-                freeCashFlowOperatingCashFlowRatio: 0.9201126388959359
-                debtServiceCoverageRatio: 5.024761722304708
-                interestCoverageRatio: 0
-                shortTermOperatingCashFlowCoverageRatio: 5.663777000814215
-                operatingCashFlowCoverageRatio: 1.109022873702276
-                capitalExpenditureCoverageRatio: 12.517624642743728
-                dividendPaidAndCapexCoverageRatio: 4.7912969490701345
-                dividendPayoutRatio: 0.16252026969360758
-                dividendYield: 0.0043585983369965175
-                dividendYieldPercentage: 0.43585983369965176
-                revenuePerShare: 25.484914639368924
-                netIncomePerShare: 6.109054070954992
-                interestDebtPerShare: 6.949329249507765
-                cashPerShare: 4.247388013764271
-                bookValuePerShare: 3.711600978715614
-                tangibleBookValuePerShare: 3.711600978715614
-                shareholdersEquityPerShare: 3.711600978715614
-                operatingCashFlowPerShare: 7.706965094592383
-                capexPerShare: 0.6156891035281195
-                freeCashFlowPerShare: 7.091275991064264
-                netIncomePerEBT: 0.7590881483581001
-                ebtPerEbit: 1.0021831580314244
-                priceToFairValue: 61.37243774486391
-                debtToMarketCap: 0.03050761336980449
-                effectiveTaxRate: 0.24091185164189982
-                enterpriseValueMultiple: 26.524727497716487
-        '401':
-          description: Invalid or missing API key
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
-                  for more information.
+                  type: object
+      tags:
+      - Ratios
 components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 40
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
+    Period:
+      name: period
+      in: query
+      description: Reporting period
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarter
+        default: annual
   securitySchemes:
     apiKeyQuery:
       type: apiKey
       in: query
       name: apikey
-      description: FMP API key passed as a query parameter (?apikey=YOUR_API_KEY, or &apikey= when other query parameters
-        exist).
-    apiKeyHeader:
-      type: apiKey
-      in: header
-      name: apikey
-      description: 'FMP API key passed in the request header as apikey: YOUR_API_KEY.'
-  schemas:
-    FinancialRatios:
-      type: object
-      properties:
-        symbol:
-          type: string
-        date:
-          type: string
-        fiscalYear:
-          type: string
-        period:
-          type: string
-        reportedCurrency:
-          type: string
-        grossProfitMargin:
-          type: number
-        ebitMargin:
-          type: number
-        ebitdaMargin:
-          type: number
-        operatingProfitMargin:
-          type: number
-        pretaxProfitMargin:
-          type: number
-        continuousOperationsProfitMargin:
-          type: number
-        netProfitMargin:
-          type: number
-        bottomLineProfitMargin:
-          type: number
-        receivablesTurnover:
-          type: number
-        payablesTurnover:
-          type: number
-        inventoryTurnover:
-          type: number
-        fixedAssetTurnover:
-          type: number
-        assetTurnover:
-          type: number
-        currentRatio:
-          type: number
-        quickRatio:
-          type: number
-        solvencyRatio:
-          type: number
-        cashRatio:
-          type: number
-        priceToEarningsRatio:
-          type: number
-        priceToEarningsGrowthRatio:
-          type: number
-        forwardPriceToEarningsGrowthRatio:
-          type: number
-        priceToBookRatio:
-          type: number
-        priceToSalesRatio:
-          type: number
-        priceToFreeCashFlowRatio:
-          type: number
-        priceToOperatingCashFlowRatio:
-          type: number
-        debtToAssetsRatio:
-          type: number
-        debtToEquityRatio:
-          type: number
-        debtToCapitalRatio:
-          type: number
-        longTermDebtToCapitalRatio:
-          type: number
-        financialLeverageRatio:
-          type: number
-        workingCapitalTurnoverRatio:
-          type: number
-        operatingCashFlowRatio:
-          type: number
-        operatingCashFlowSalesRatio:
-          type: number
-        freeCashFlowOperatingCashFlowRatio:
-          type: number
-        debtServiceCoverageRatio:
-          type: number
-        interestCoverageRatio:
-          type: integer
-        shortTermOperatingCashFlowCoverageRatio:
-          type: number
-        operatingCashFlowCoverageRatio:
-          type: number
-        capitalExpenditureCoverageRatio:
-          type: number
-        dividendPaidAndCapexCoverageRatio:
-          type: number
-        dividendPayoutRatio:
-          type: number
-        dividendYield:
-          type: number
-        dividendYieldPercentage:
-          type: number
-        revenuePerShare:
-          type: number
-        netIncomePerShare:
-          type: number
-        interestDebtPerShare:
-          type: number
-        cashPerShare:
-          type: number
-        bookValuePerShare:
-          type: number
-        tangibleBookValuePerShare:
-          type: number
-        shareholdersEquityPerShare:
-          type: number
-        operatingCashFlowPerShare:
-          type: number
-        capexPerShare:
-          type: number
-        freeCashFlowPerShare:
-          type: number
-        netIncomePerEBT:
-          type: number
-        ebtPerEbit:
-          type: number
-        priceToFairValue:
-          type: number
-        debtToMarketCap:
-          type: number
-        effectiveTaxRate:
-          type: number
-        enterpriseValueMultiple:
-          type: number
-    Error:
-      type: object
-      properties:
-        Error Message:
-          type: string
-      description: 'FMP error envelope, e.g. {"Error Message": "Invalid API KEY. ..."}'

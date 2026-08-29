@@ -1,102 +1,63 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Financial Modeling Prep Search API
-  description: Financial Modeling Prep (FMP) Search API — part of the FMP stable REST API. Generated from the official FMP
-    API documentation (https://site.financialmodelingprep.com/api-docs.md). Legacy /api/v3 and /api/v4 endpoints have been
-    discontinued; the stable base URL https://financialmodelingprep.com/stable is the supported surface.
-  version: stable
+  description: Financial Modeling Prep (FMP) provides financial market data including real-time and historical stock quotes, company fundamentals, financial statements (income, balance sheet, cash flow), insider transactions, earnings, ratios, and economic data. This OpenAPI spec covers a representative subset of the public REST API.
+  version: 3.0.0
   contact:
     name: Financial Modeling Prep
     url: https://site.financialmodelingprep.com/
 servers:
-- url: https://financialmodelingprep.com/stable
-  description: Financial Modeling Prep stable API
+- url: https://financialmodelingprep.com/api/v3
+  description: Financial Modeling Prep v3 API
 security:
 - apiKeyQuery: []
-- apiKeyHeader: []
 tags:
 - name: Search
 paths:
-  /search-symbol:
+  /search:
     get:
       operationId: searchSymbols
-      summary: Search stock ticker symbols by company name or symbol
-      description: Search stock ticker symbols by company name or symbol. Documented at https://site.financialmodelingprep.com/developer/docs.
-      tags:
-      - Search
+      summary: Search for ticker symbols
       parameters:
       - name: query
         in: query
         required: true
         schema:
           type: string
-        example: AAPL
       - name: limit
         in: query
-        required: false
         schema:
-          type: number
-        example: '50'
+          type: integer
+          default: 10
       - name: exchange
         in: query
-        required: false
         schema:
           type: string
-        example: NASDAQ
       responses:
         '200':
-          description: Search data
+          description: Search results
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/SymbolSearchResult'
-              example:
-              - symbol: AAPL
-                name: Apple Inc.
-                currency: USD
-                exchangeFullName: NASDAQ Global Select
-                exchange: NASDAQ
-        '401':
-          description: Invalid or missing API key
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                Error Message: Invalid API KEY. Feel free to create a Free API Key or visit https://site.financialmodelingprep.com/faqs?search=why-is-my-api-key-invalid
-                  for more information.
+                  type: object
+                  properties:
+                    symbol:
+                      type: string
+                    name:
+                      type: string
+                    currency:
+                      type: string
+                    stockExchange:
+                      type: string
+                    exchangeShortName:
+                      type: string
+      tags:
+      - Search
 components:
   securitySchemes:
     apiKeyQuery:
       type: apiKey
       in: query
       name: apikey
-      description: FMP API key passed as a query parameter (?apikey=YOUR_API_KEY, or &apikey= when other query parameters
-        exist).
-    apiKeyHeader:
-      type: apiKey
-      in: header
-      name: apikey
-      description: 'FMP API key passed in the request header as apikey: YOUR_API_KEY.'
-  schemas:
-    SymbolSearchResult:
-      type: object
-      properties:
-        symbol:
-          type: string
-        name:
-          type: string
-        currency:
-          type: string
-        exchangeFullName:
-          type: string
-        exchange:
-          type: string
-    Error:
-      type: object
-      properties:
-        Error Message:
-          type: string
-      description: 'FMP error envelope, e.g. {"Error Message": "Invalid API KEY. ..."}'

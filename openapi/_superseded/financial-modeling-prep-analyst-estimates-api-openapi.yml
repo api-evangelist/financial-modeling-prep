@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Financial Modeling Prep Analyst Estimates Fundamentals API
+  title: Financial Modeling Prep Analyst Estimates API
   description: Financial Modeling Prep (FMP) provides real-time and historical financial data through more than 100 REST endpoints served from the stable base https://financialmodelingprep.com/stable. Coverage includes company financial statements (income statement, balance sheet, cash flow), real-time and historical quotes for stocks, forex, crypto, and commodities, SEC filings, analyst estimates, company fundamentals (profile, key metrics, ratios), and macroeconomic indicators. All requests are authenticated with an API key passed as the `apikey` query parameter. Responses default to JSON and most endpoints also support CSV via the `datatype` parameter. This document models a representative subset of the stable endpoints; see the FMP developer docs for the full catalog. FMP also exposes a real-time WebSocket surface, modeled separately in asyncapi/financialmodelingprep-asyncapi.yml.
   version: stable
   contact:
@@ -15,61 +15,45 @@ servers:
 security:
 - apiKeyQuery: []
 tags:
-- name: Fundamentals
-  description: Company profile plus derived key metrics and ratios.
+- name: Analyst Estimates
+  description: Consensus estimates, price targets, and rating grades.
 paths:
-  /profile:
+  /analyst-estimates:
     get:
-      operationId: getCompanyProfile
+      operationId: getAnalystEstimates
       tags:
-      - Fundamentals
-      summary: Company profile
-      description: Returns a company profile - sector, industry, description, market cap, exchange, executives, and identifiers - for a ticker symbol.
+      - Analyst Estimates
+      summary: Analyst estimates
+      description: Returns consensus analyst estimates - projected revenue, EPS, EBITDA, and net income - for a ticker symbol, by annual or quarterly period.
       parameters:
       - $ref: '#/components/parameters/symbol'
+      - $ref: '#/components/parameters/period'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/limit'
       responses:
         '200':
-          description: The company profile.
+          description: A list of analyst estimate periods.
           content:
             application/json:
               schema:
                 type: array
                 items:
                   type: object
-  /key-metrics:
+  /financial-estimates:
     get:
-      operationId: getKeyMetrics
+      operationId: getFinancialEstimates
       tags:
-      - Fundamentals
-      summary: Key metrics
-      description: Returns per-period key financial metrics (per-share values, margins, returns, and other derived measures) for a ticker symbol.
+      - Analyst Estimates
+      summary: Financial estimates
+      description: Returns forward-looking financial estimates for a ticker symbol as forecast by analysts.
       parameters:
       - $ref: '#/components/parameters/symbol'
       - $ref: '#/components/parameters/period'
+      - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
       responses:
         '200':
-          description: A list of key-metric periods.
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-  /ratios:
-    get:
-      operationId: getFinancialRatios
-      tags:
-      - Fundamentals
-      summary: Financial ratios
-      description: Returns per-period financial ratios (liquidity, profitability, leverage, and valuation) for a ticker symbol.
-      parameters:
-      - $ref: '#/components/parameters/symbol'
-      - $ref: '#/components/parameters/period'
-      - $ref: '#/components/parameters/limit'
-      responses:
-        '200':
-          description: A list of ratio periods.
+          description: A list of financial estimate periods.
           content:
             application/json:
               schema:
@@ -78,17 +62,14 @@ paths:
                   type: object
 components:
   parameters:
-    period:
-      name: period
+    page:
+      name: page
       in: query
       required: false
-      description: Reporting period.
+      description: Zero-based page number for paginated results.
       schema:
-        type: string
-        enum:
-        - annual
-        - quarter
-        default: annual
+        type: integer
+        default: 0
     limit:
       name: limit
       in: query
@@ -104,6 +85,17 @@ components:
       description: Ticker symbol, e.g. AAPL. Some endpoints accept forex (EURUSD) or crypto (BTCUSD) symbols.
       schema:
         type: string
+    period:
+      name: period
+      in: query
+      required: false
+      description: Reporting period.
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarter
+        default: annual
   securitySchemes:
     apiKeyQuery:
       type: apiKey
