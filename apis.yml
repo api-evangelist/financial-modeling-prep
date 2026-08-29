@@ -4,6 +4,18 @@ description: Financial Modeling Prep (FMP) provides financial market data via RE
   stock quotes, company fundamentals, income statements, balance sheets, cash flow statements, financial ratios, insider transactions,
   earnings, dividends, ETF and mutual fund data, and economic indicators - with up to 30 years of historical coverage.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
