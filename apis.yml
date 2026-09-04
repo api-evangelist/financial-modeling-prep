@@ -17,23 +17,25 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: freemium
-  onboarding: self-serve
+  pricing: paid
+  onboarding: unknown
   trial: false
-  try_now: true
+  try_now: false
   public: false
-  label: Freemium · Self-serve signup
+  label: Paid
   confidence: high
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - rate-limits
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/financial-modeling-prep.png
 access: 3rd-Party
 created: '2025-02-24'
 modified: '2026-07-22'
-position: Consumer
+position: Consuming
 tags:
 - Financial Data
 - Market Data
@@ -289,8 +291,9 @@ common:
   url: llms/financial-modeling-prep-llms.txt
 - type: Packages
   url: packages/financial-modeling-prep-packages.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/financial-modeling-prep-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: AsyncAPI
   url: asyncapi/financial-modeling-prep-websocket-asyncapi.yml
 - type: AgentSkill
