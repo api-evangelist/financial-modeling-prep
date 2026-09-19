@@ -148,6 +148,8 @@ apis:
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
@@ -222,6 +224,8 @@ apis:
   humanURL: https://site.financialmodelingprep.com/
   baseURL: https://financialmodelingprep.com/stable
   tags:
+  - Stocks
+  tags_raw:
   - Stock
   properties:
   - type: OpenAPI
