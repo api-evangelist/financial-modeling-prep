@@ -40,24 +40,19 @@
     "financial-modeling-prep-openapi.yml: declared missing tag: Quote",
     "financial-modeling-prep-openapi.yml: declared missing tag: Ratios",
     "financial-modeling-prep-openapi.yml: declared missing tag: Search",
-    "financial-modeling-prep-openapi.yml: declared missing tag: Stock"
+    "financial-modeling-prep-openapi.yml: declared missing tag: Stock",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
-    "financial-modeling-prep-analyst-estimates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-balance-sheet-statement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-cash-flow-statement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "financial-modeling-prep-economic-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "financial-modeling-prep-financial-statements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "financial-modeling-prep-fundamentals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-historical-price-full-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-income-statement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-insider-trading-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-profile-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-quote-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "financial-modeling-prep-quotes-and-prices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-ratios-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "financial-modeling-prep-sec-filings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "financial-modeling-prep-stock-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

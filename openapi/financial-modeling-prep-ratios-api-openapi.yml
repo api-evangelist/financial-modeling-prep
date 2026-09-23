@@ -41,13 +41,6 @@ components:
       schema:
         type: integer
         default: 40
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
-      schema:
-        type: string
     Period:
       name: period
       in: query
@@ -58,6 +51,13 @@ components:
         - annual
         - quarter
         default: annual
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
   securitySchemes:
     apiKeyQuery:
       type: apiKey

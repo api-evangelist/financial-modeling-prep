@@ -41,15 +41,16 @@ paths:
       tags:
       - Historical Price Full
 components:
-  parameters:
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
-      schema:
-        type: string
   schemas:
+    HistoricalPriceResponse:
+      type: object
+      properties:
+        symbol:
+          type: string
+        historical:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoricalPrice'
     HistoricalPrice:
       type: object
       properties:
@@ -68,15 +69,14 @@ components:
           type: number
         volume:
           type: integer
-    HistoricalPriceResponse:
-      type: object
-      properties:
-        symbol:
-          type: string
-        historical:
-          type: array
-          items:
-            $ref: '#/components/schemas/HistoricalPrice'
+  parameters:
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
   securitySchemes:
     apiKeyQuery:
       type: apiKey
