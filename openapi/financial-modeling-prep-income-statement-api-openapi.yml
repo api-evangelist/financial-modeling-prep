@@ -34,6 +34,30 @@ paths:
       tags:
       - Income Statement
 components:
+  parameters:
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
+    Period:
+      name: period
+      in: query
+      description: Reporting period
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarter
+        default: annual
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 40
   schemas:
     IncomeStatement:
       type: object
@@ -57,30 +81,6 @@ components:
           type: number
         eps:
           type: number
-  parameters:
-    Period:
-      name: period
-      in: query
-      description: Reporting period
-      schema:
-        type: string
-        enum:
-        - annual
-        - quarter
-        default: annual
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
-      schema:
-        type: string
-    Limit:
-      name: limit
-      in: query
-      schema:
-        type: integer
-        default: 40
   securitySchemes:
     apiKeyQuery:
       type: apiKey

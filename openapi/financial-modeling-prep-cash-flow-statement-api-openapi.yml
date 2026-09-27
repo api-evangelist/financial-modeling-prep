@@ -35,12 +35,13 @@ paths:
       - Cash Flow Statement
 components:
   parameters:
-    Limit:
-      name: limit
-      in: query
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
       schema:
-        type: integer
-        default: 40
+        type: string
     Period:
       name: period
       in: query
@@ -51,13 +52,12 @@ components:
         - annual
         - quarter
         default: annual
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
+    Limit:
+      name: limit
+      in: query
       schema:
-        type: string
+        type: integer
+        default: 40
   securitySchemes:
     apiKeyQuery:
       type: apiKey
