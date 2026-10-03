@@ -35,13 +35,6 @@ paths:
       - Income Statement
 components:
   parameters:
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
-      schema:
-        type: string
     Period:
       name: period
       in: query
@@ -52,6 +45,13 @@ components:
         - annual
         - quarter
         default: annual
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
     Limit:
       name: limit
       in: query
