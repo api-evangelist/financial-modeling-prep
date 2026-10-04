@@ -42,6 +42,15 @@ paths:
       - Historical Price Full
 components:
   schemas:
+    HistoricalPriceResponse:
+      type: object
+      properties:
+        symbol:
+          type: string
+        historical:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoricalPrice'
     HistoricalPrice:
       type: object
       properties:
@@ -60,15 +69,6 @@ components:
           type: number
         volume:
           type: integer
-    HistoricalPriceResponse:
-      type: object
-      properties:
-        symbol:
-          type: string
-        historical:
-          type: array
-          items:
-            $ref: '#/components/schemas/HistoricalPrice'
   parameters:
     Symbol:
       name: symbol
