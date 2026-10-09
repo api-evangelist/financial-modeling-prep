@@ -157,3 +157,51 @@ plans:
 notes: Per-endpoint availability and symbol/page/limit restrictions per tier are itemized in pricing.md. Plan add-ons
   for extra bandwidth and API calls are available from the customer dashboard (changelog 2026-05-21). A trailing
   30-day bandwidth consumption policy applies.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units:
+  - rate
+  plans:
+  - name: Basic
+    access: freemium
+    model: free
+    model_how: derived
+    units:
+    - other
+    - rate
+    periods:
+    - day
+    - unbounded
+  - name: Starter
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - other
+    - rate
+    periods:
+    - minute
+    - unbounded
+  - name: Premium
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - other
+    - rate
+    periods:
+    - minute
+    - unbounded
+  - name: Ultimate
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - other
+    - rate
+    periods:
+    - minute
+    - unbounded
