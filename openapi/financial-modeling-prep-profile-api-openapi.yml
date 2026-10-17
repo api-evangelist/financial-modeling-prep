@@ -32,14 +32,6 @@ paths:
       tags:
       - Profile
 components:
-  parameters:
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
-      schema:
-        type: string
   schemas:
     CompanyProfile:
       type: object
@@ -64,6 +56,14 @@ components:
           type: string
         currency:
           type: string
+  parameters:
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
   securitySchemes:
     apiKeyQuery:
       type: apiKey

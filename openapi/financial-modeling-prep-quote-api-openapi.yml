@@ -33,14 +33,6 @@ paths:
       tags:
       - Quote
 components:
-  parameters:
-    Symbol:
-      name: symbol
-      in: path
-      required: true
-      description: Ticker symbol (e.g., AAPL, MSFT)
-      schema:
-        type: string
   schemas:
     Quote:
       type: object
@@ -85,6 +77,14 @@ components:
           type: number
         timestamp:
           type: integer
+  parameters:
+    Symbol:
+      name: symbol
+      in: path
+      required: true
+      description: Ticker symbol (e.g., AAPL, MSFT)
+      schema:
+        type: string
   securitySchemes:
     apiKeyQuery:
       type: apiKey
