@@ -16,3 +16,15 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: financial-modeling-prep-cboe-global-markets
+  label: Cboe Global Markets
+  partner: cboe
+  partner_name: Cboe Global Markets
+  category: Cboe market data vendor
+  type: coverage
+  channel: provider-built
+  evidence: https://www.cboe.com/market_data_services/vendors/
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
