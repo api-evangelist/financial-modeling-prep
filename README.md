@@ -1,4 +1,4 @@
-# Financial Modeling Prep (financial-modeling-prep)
+# Financial Modeling Prep
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,200 @@
 
 Financial Modeling Prep (FMP) provides financial market data via REST APIs, including real-time and historical stock quotes, company fundamentals, income statements, balance sheets, cash flow statements, financial ratios, insider transactions, earnings, dividends, ETF and mutual fund data, and economic indicators - with up to 30 years of historical coverage.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/apis.yml)
+**Areas:** Financial Data · Market Data · Stocks · Quotes · Fundamentals · Financial Statements · Historical · Real-Time
 
-## Scope
+## Financial Modeling Prep on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Financial Modeling Prep is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/financial-modeling-prep/](https://apis.io/providers/financial-modeling-prep/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Financial Data
-- Market Data
-- Stocks
-- Quotes
-- Fundamentals
-- Financial Statements
-- Historical
+- [Financial Modeling Prep Balance Sheet Statement API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-balance-sheet-statement-api/) — The Balance Sheet Statement API from Financial Modeling Prep — 1 operation(s) for balance sheet statement.
+- [Financial Modeling Prep Cash Flow Statement API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-cash-flow-statement-api/) — The Cash Flow Statement API from Financial Modeling Prep — 1 operation(s) for cash flow statement.
+- [Financial Modeling Prep Historical Price Full API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-historical-price-full-api/) — The Historical Price Full API from Financial Modeling Prep — 1 operation(s) for historical price full.
+- [Financial Modeling Prep Income Statement API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-income-statement-api/) — The Income Statement API from Financial Modeling Prep — 1 operation(s) for income statement.
+- [Financial Modeling Prep Insider Trading API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-insider-trading-api/) — The Insider Trading API from Financial Modeling Prep — 1 operation(s) for insider trading.
+- [Financial Modeling Prep Profile API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-profile-api/) — The Profile API from Financial Modeling Prep — 1 operation(s) for profile.
+- [Financial Modeling Prep Quote API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-quote-api/) — The Quote API from Financial Modeling Prep — 1 operation(s) for quote.
+- [Financial Modeling Prep Ratios API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-ratios-api/) — The Ratios API from Financial Modeling Prep — 1 operation(s) for ratios.
+- [Financial Modeling Prep Search API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-search-api/) — The Search API from Financial Modeling Prep — 1 operation(s) for search.
+- [Financial Modeling Prep Stock API](https://apis.io/apis/financial-modeling-prep/financial-modeling-prep-stock-api/) — The Stock API from Financial Modeling Prep — 1 operation(s) for stock.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-24
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (2)
 
-### Financial Modeling Prep API
+Event-driven and webhook contracts.
 
-REST API offering real-time and historical stock quotes, financial statements, company profiles, ratios, insider trading, ETFs, and economic data. Authentication via API key passed as the apikey query parameter.
+- [Financial Modeling Prep Real-Time WebSocket API](https://apis.io/asyncapis/financial-modeling-prep/financial-modeling-prep-asyncapi/)
+- [Financial Modeling Prep WebSocket API](https://apis.io/asyncapis/financial-modeling-prep/financial-modeling-prep-websocket-asyncapi/)
 
-- **Human URL:** [https://site.financialmodelingprep.com/](https://site.financialmodelingprep.com/)
-- **Base URL:** `https://financialmodelingprep.com/api/v3`
+#### Event channels (2)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- Financial Data
-- Market Data
-- Stocks
-- Fundamentals
+- [/](https://apis.io/channels/financial-modeling-prep/stream/)
+- [/](https://apis.io/channels/financial-modeling-prep/untitled/)
 
-#### Properties
+#### MCP servers (1)
 
-- [Documentation](https://site.financialmodelingprep.com/developer/docs)
-- [Sign Up](https://site.financialmodelingprep.com/register)
-- [Pricing](https://site.financialmodelingprep.com/developer/docs/pricing)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/financial-modeling-prep/refs/heads/main/openapi/financial-modeling-prep-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/financial-modeling-prep.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/financial-modeling-prep.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Model Context Protocol servers that expose the API to agents.
 
-## Common Properties
+- [financial-modeling-prep](https://apis.io/servers/financial-modeling-prep/financial-modeling-prep/)
 
-- [GitHub Organization](https://github.com/FinancialModelingPrep)
-- [LinkedIn](https://www.linkedin.com/company/financial-modeling-prep)
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Financial Modeling Prep Agentic Access](https://apis.io/agentic-access/financial-modeling-prep/financial-modeling-prep-agentic-access/)
+
+#### Collections (28)
+
+Postman and Open Collection request collections.
+
+- [Financial Modeling Prep API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep/)
+- [Financial Modeling Prep Analyst Estimates API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-analyst-estimates-api/)
+- [Financial Modeling Prep Balance Sheet Statement API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-balance-sheet-statement-api/)
+- [Financial Modeling Prep Cash Flow Statement API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-cash-flow-statement-api/)
+- [Financial Modeling Prep Analyst Estimates Economic Data API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-economic-data-api/)
+- [Financial Modeling Prep Analyst Estimates Financial Statements API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-financial-statements-api/)
+- [Financial Modeling Prep Analyst Estimates Fundamentals API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-fundamentals-api/)
+- [Financial Modeling Prep Historical Price Full API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-historical-price-full-api/)
+- [Financial Modeling Prep Income Statement API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-income-statement-api/)
+- [Financial Modeling Prep Insider Trading API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-insider-trading-api/)
+- [Financial Modeling Prep Profile API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-profile-api/)
+- [Financial Modeling Prep Quote API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-quote-api/)
+- [Financial Modeling Prep Analyst Estimates Quotes and Prices API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-quotes-and-prices-api/)
+- [Financial Modeling Prep Ratios API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-ratios-api/)
+- [Financial Modeling Prep Search API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-search-api/)
+- [Financial Modeling Prep Analyst Estimates SEC Filings API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-sec-filings-api/)
+- [Financial Modeling Prep Stock API](https://apis.io/collections/financial-modeling-prep/open-financial-modeling-prep-stock-api/)
+- [Financial Modeling Prep API](https://apis.io/collections/financial-modeling-prep/open-financialmodelingprep/)
+- [Financial Modeling Prep Balance Sheet Statement API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-balance-sheet-statement-api/)
+- [Financial Modeling Prep Cash Flow Statement API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-cash-flow-statement-api/)
+- [Financial Modeling Prep Historical Price Full API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-historical-price-full-api/)
+- [Financial Modeling Prep Income Statement API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-income-statement-api/)
+- [Financial Modeling Prep Insider Trading API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-insider-trading-api/)
+- [Financial Modeling Prep Profile API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-profile-api/)
+- [Financial Modeling Prep Quote API](https://apis.io/collections/financial-modeling-prep/postman-financial-modeling-prep-quote-api/)
+- …and 3 more published on APIs.io
+
+#### Overlays (10)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Financial Modeling Prep Balance Sheet Statement Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-balance-sheet-statement-api-overlay/)
+- [Financial Modeling Prep Cash Flow Statement Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-cash-flow-statement-api-overlay/)
+- [Financial Modeling Prep Historical Price Full Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-historical-price-full-api-overlay/)
+- [Financial Modeling Prep Income Statement Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-income-statement-api-overlay/)
+- [Financial Modeling Prep Insider Trading Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-insider-trading-api-overlay/)
+- [Financial Modeling Prep Profile Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-profile-api-overlay/)
+- [Financial Modeling Prep Quote Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-quote-api-overlay/)
+- [Financial Modeling Prep Ratios Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-ratios-api-overlay/)
+- [Financial Modeling Prep Search Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-search-api-overlay/)
+- [Financial Modeling Prep Stock Api Overlay](https://apis.io/overlays/financial-modeling-prep/financial-modeling-prep-stock-api-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Financial Modeling Prep — asyncapi rules](https://apis.io/rules/financial-modeling-prep/financial-modeling-prep-asyncapi-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Financial Modeling Prep Authentication](https://apis.io/security/financial-modeling-prep/financial-modeling-prep-authentication/)
+- [Financial Modeling Prep Domain Security](https://apis.io/security/financial-modeling-prep/financial-modeling-prep-domain-security/)
+- [Financial Modeling Prep Trust Center](https://apis.io/security/financial-modeling-prep/financial-modeling-prep-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Financial Modeling Prep Plans Pricing](https://apis.io/plans/financial-modeling-prep/financial-modeling-prep-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Financial Modeling Prep Rate Limits](https://apis.io/rate-limits/financial-modeling-prep/financial-modeling-prep-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Financial Modeling Prep Finops](https://apis.io/finops/financial-modeling-prep/financial-modeling-prep-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://site.financialmodelingprep.com/)
 - [Documentation](https://site.financialmodelingprep.com/developer/docs)
-- [Sign Up](https://site.financialmodelingprep.com/register)
+- [API reference](https://site.financialmodelingprep.com/developer/docs)
 - [Pricing](https://site.financialmodelingprep.com/developer/docs/pricing)
+- [Support](https://site.financialmodelingprep.com/contact)
 - [Blog](https://site.financialmodelingprep.com/market-news)
+- [Compliance](https://site.financialmodelingprep.com/trust)
+- [Terms of service](https://site.financialmodelingprep.com/terms-of-service)
+- [Privacy policy](https://site.financialmodelingprep.com/privacy-policy)
+- [GitHub](https://github.com/FinancialModelingPrep)
+- [Status](https://status.financialmodelingprep.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 61.7** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 51.7 |
+| Contract governance | 15.9 |
+| Operational transparency | 73.7 |
+| Developer ergonomics | 48.2 |
+| Access clarity | 92.1 |
+
+**Agent readiness 38.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 33.3** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/financial-modeling-prep/](https://apis.io/providers/financial-modeling-prep/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Financial Modeling Prep: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/financial-modeling-prep/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
