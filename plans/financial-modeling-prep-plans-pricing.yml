@@ -1,0 +1,100 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://site.financialmodelingprep.com/developer/docs/pricing
+sources:
+- https://site.financialmodelingprep.com/developer/docs/pricing
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T141238
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Monthly and annual (discounted) prices shown; annual figures listed as $19.00, $49.00, $99.00 /month.
+  Build and Enterprise plans mentioned only in bandwidth note without prices.
+plan_count: 4
+currency: USD
+plans:
+- name: Basic
+  price_text: $0 /month
+  price: 0
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 250 Calls / Day, End of Day Historical Data, Profile and Reference Data, 150+ Endpoints
+- name: Starter
+  price_text: $29
+  price: 29
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 300 API Calls / Minute; up to 5 Years of Historical Data; US Coverage; annual fundamentals
+    and ratios ($19.00/month billed annually, Save 34%)
+- name: Premium
+  price_text: $69
+  price: 69
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 750 API Calls / Minute; up to 30 Years of Historical Data; UK and Canada Coverage ($49.00/month
+    billed annually, Save 29%)
+- name: Ultimate
+  price_text: $139
+  price: 139
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 3,000 API Calls / Min; Global Coverage; transcripts; 13F; bulk delivery ($99.00/month
+    billed annually, Save 29%)
+rate_limit_statements:
+- 250 Calls / Day
+- 300 API Calls / Minute
+- 750 API Calls / Minute
+- 3,000 API Calls / Min
+- 'API usage has a trailing 30 days bandwidth limit of: Free plan - 500MB, Starter plan - 20GB, Premium
+  plan - 50GB, Ultimate plan - 150GB, Build plan - 100GB, and Enterprise plan 1TB+.'
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Basic
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Starter
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Premium
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Ultimate
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
