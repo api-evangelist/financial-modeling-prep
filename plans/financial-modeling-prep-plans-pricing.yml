@@ -59,7 +59,7 @@ rate_limit_statements:
 - 'API usage has a trailing 30 days bandwidth limit of: Free plan - 500MB, Starter plan - 20GB, Premium
   plan - 50GB, Ultimate plan - 150GB, Build plan - 100GB, and Enterprise plan 1TB+.'
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - free
