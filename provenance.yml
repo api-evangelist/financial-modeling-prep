@@ -146,16 +146,109 @@ artifacts:
   heartbeat/2026-11-02.yml:
     method: unknown
     evidence: no authorship recorded
+  heartbeat/2026-11-06.yml:
+    method: unknown
+    evidence: no authorship recorded
+  hosts/financial-modeling-prep-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
   integrations/financial-modeling-prep-integration-edges.yml:
     method: searched
     evidence: declared in the artifact
+  json-ld/financial-modeling-prep-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/financial-modeling-prep-company-profile-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/financial-modeling-prep-historical-price-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/financial-modeling-prep-income-statement-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/financial-modeling-prep-quote-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/checks-2026-11-02T082323.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T062655.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T080032.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T204651.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T221936.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-13T214537.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T064754.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T210656.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T225847.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T211329.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T230249.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T210549.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T225339.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T211151.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T233623.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T205255.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T231945.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T165737.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T193153.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T205903.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T232958.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T211425.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T233935.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-22T213221.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -224,6 +317,9 @@ artifacts:
   lifecycle/financial-modeling-prep-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
+  llms/financial-modeling-prep-llms-provenance.yml:
+    method: searched
+    evidence: 'derive-llms-provenance.py: harvested'
   llms/financial-modeling-prep-llms.txt:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
@@ -295,7 +391,10 @@ artifacts:
     method: derived
     evidence: an API Evangelist overlay (title) over the provider's contract
   packages/financial-modeling-prep-packages.yml:
-    method: searched
+    method: unknown
+    evidence: no authorship recorded
+  patterns/financial-modeling-prep-patterns.yml:
+    method: derived
     evidence: declared in the artifact
   plans/financial-modeling-prep-plans-pricing.yml:
     method: searched
@@ -336,7 +435,13 @@ artifacts:
   rate-limits/financial-modeling-prep-rate-limits.yml:
     method: searched
     evidence: declared in the artifact
+  regulatory/financial-modeling-prep-regulatory-posture.yml:
+    method: unknown
+    evidence: no authorship recorded
   rules/financial-modeling-prep-asyncapi-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/financial-modeling-prep-rules.yml:
     method: generated
     evidence: declared in the artifact
   security/financial-modeling-prep-domain-security.yml:
@@ -346,11 +451,14 @@ artifacts:
     method: searched
     evidence: declared in the artifact
   skills/_index.yml:
-    method: generated
-    evidence: declared in the artifact
+    method: unknown
+    evidence: no authorship recorded
   skills/financial-modeling-prep-company-fundamentals.md:
     method: generated
     evidence: declared in the artifact
+  skills/financial-modeling-prep-get-quote.md:
+    method: unknown
+    evidence: no authorship recorded
   skills/financial-modeling-prep-insider-trading-screen.md:
     method: generated
     evidence: declared in the artifact
@@ -359,6 +467,12 @@ artifacts:
     evidence: declared in the artifact
   sla/financial-modeling-prep-sla.yml:
     method: generated
+    evidence: declared in the artifact
+  vendors/financial-modeling-prep-vendors.yml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/financial-modeling-prep-vocabulary.yml:
+    method: derived
     evidence: declared in the artifact
   well-known/financial-modeling-prep-oauth-authorization-server.json:
     method: unknown
